@@ -1,0 +1,251 @@
+<!doctype html>
+<!-- Retirer l'attribut data-dev de <html> avant publication : il affiche les repères "À fournir". -->
+<html lang="fr" data-dev>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>kannrunn — Association de running</title>
+<meta name="description" content="kannrunn est une association de running créée par Anatole, Nada, Khamzat et Nathan. Découvrez le collectif et contactez-nous pour courir ensemble.">
+<meta name="theme-color" content="#3F0591">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kannrunn — Association de running">
+<meta property="og:description" content="On court. On se retrouve. On avance. Association de running créée par Anatole, Nada, Khamzat et Nathan.">
+<meta property="og:image" content="assets/og.jpg"><!-- remplacer par l'URL absolue une fois le site en ligne -->
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preload" href="assets/fonts/Adumu-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<a class="skip" href="#collectif">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#top" aria-label="kannrunn, retour en haut"><img class="logo" src="assets/logo-kr.png" alt="Monogramme kr de kannrunn" width="44" height="44"></a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#collectif">Le collectif</a></li>
+        <li><a href="#sorties">Les sorties</a></li>
+        <li><a href="#equipe">L’équipe</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-rose" href="#contact">Courir avec nous</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+</header>
+
+<div class="menu-mobile" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="fermer" id="fermer">Fermer</button>
+  <a href="#collectif">Le collectif</a>
+  <a href="#sorties">Les sorties</a>
+  <a href="#equipe">L’équipe</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-rose" href="#contact" style="font:600 1rem var(--f-texte);align-self:flex-start">Courir avec nous</a>
+</div>
+
+<main id="top">
+
+<section class="section violet hero" aria-labelledby="titre-hero">
+  <div class="hero-photo" data-manque="photo de running (assets/photos/hero.jpg)">
+    <img src="assets/photos/hero.jpg" alt="Des coureurs de kannrunn en train de courir ensemble" width="1600" height="1000" fetchpriority="high" onerror="this.remove()">
+  </div>
+  <img class="motif motif-anim" src="assets/logo-kr.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <h1 id="titre-hero"><span>On court.</span> <span>On se retrouve.</span> <span>On avance.</span></h1>
+    <p>kannrunn, l’association de running créée par Anatole, Nada, Khamzat et Nathan. Découvrez le collectif et prenons contact pour courir ensemble.</p>
+    <div class="actions">
+      <a class="btn btn-rose" href="#collectif">Découvrir le collectif</a>
+      <a class="btn btn-ligne" href="#contact">Courir avec nous</a>
+    </div>
+    <a class="defiler" href="#collectif" aria-label="Faire défiler vers le collectif">Défiler ↓</a>
+  </div>
+</section>
+
+<section class="section clair collectif" id="collectif" aria-labelledby="titre-collectif">
+  <div class="wrap">
+    <div class="duo">
+      <h2 id="titre-collectif" class="reveal">Quatre personnes. Une envie : courir ensemble.</h2>
+      <div class="reveal" style="--i:1">
+        <p class="chapeau">kannrunn est une association de running fondée par Anatole, Nada, Khamzat et Nathan.</p>
+        <p id="presentation" hidden></p>
+      </div>
+    </div>
+    <ul class="piliers">
+      <li class="reveal"><strong>Partager</strong>Faire de la course un moment collectif.</li>
+      <li class="reveal" style="--i:1"><strong>Progresser</strong>Avancer avec une dynamique de groupe.</li>
+      <li class="reveal" style="--i:2"><strong>Se retrouver</strong>Créer du lien autour d’une pratique commune.</li>
+    </ul>
+    <figure class="photo reveal" data-manque="photo de groupe (assets/photos/groupe.jpg)">
+      <img src="assets/photos/groupe.jpg" alt="Le groupe kannrunn réuni avant une sortie" width="1600" height="1200" loading="lazy" onerror="this.remove()">
+    </figure>
+  </div>
+</section>
+
+<section class="section rose sur-clair sorties" id="sorties" aria-labelledby="titre-sorties">
+  <div class="wrap">
+    <h2 id="titre-sorties" class="reveal">Le prochain départ, c’est ensemble.</h2>
+    <ul class="liste-sorties" id="liste-sorties" hidden></ul>
+    <div class="vide reveal" id="sorties-vide">
+      <p>Les prochaines sorties seront annoncées ici. Contactez-nous pour en savoir plus.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-violet" href="#contact">Nous contacter</a>
+      <a class="btn btn-ligne" id="insta-sorties" href="#" target="_blank" rel="noopener" hidden>Suivre sur Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="section clair equipe" id="equipe" aria-labelledby="titre-equipe">
+  <div class="wrap">
+    <h2 id="titre-equipe" class="reveal">Anatole — Nada — Khamzat — Nathan</h2>
+    <ul id="liste-equipe">
+      <li class="reveal"><figure class="photo" data-manque="photo d’Anatole"></figure><h3>Anatole</h3><p class="bio" hidden></p></li>
+      <li class="reveal" style="--i:1"><figure class="photo" data-manque="photo de Nada"></figure><h3>Nada</h3><p class="bio" hidden></p></li>
+      <li class="reveal" style="--i:2"><figure class="photo" data-manque="photo de Khamzat"></figure><h3>Khamzat</h3><p class="bio" hidden></p></li>
+      <li class="reveal" style="--i:3"><figure class="photo" data-manque="photo de Nathan"></figure><h3>Nathan</h3><p class="bio" hidden></p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section violet identite" id="identite" aria-labelledby="titre-identite">
+  <div class="wrap">
+    <h2 id="titre-identite" class="reveal">L’univers kannrunn</h2>
+    <div class="lookbook">
+      <img class="logo-grand reveal" src="assets/logo-kr.png" alt="Monogramme kr, rose sur fond violet" loading="lazy" width="256" height="256">
+      <div class="reveal" style="--i:1">
+        <div class="teintes" role="list" aria-label="Couleurs de la marque">
+          <div class="teinte v" role="listitem">Violet</div>
+          <div class="teinte r" role="listitem">Rose</div>
+          <div class="teinte b" role="listitem">Blanc</div>
+        </div>
+        <p class="concept" id="concept-tenues" hidden>Concepts de collection : ces tenues ne sont pas encore disponibles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section clair contact" id="contact" aria-labelledby="titre-contact">
+  <div class="wrap">
+    <div>
+      <h2 id="titre-contact" class="reveal">Envie de courir avec nous ?</h2>
+      <p class="chapeau reveal" style="--i:1">Une question sur le collectif ou les prochaines sorties ? Écrivez-nous.</p>
+      <div class="liens">
+        <a class="btn btn-violet" id="lien-mail" href="#" hidden>Envoyer un e-mail</a>
+        <a class="btn btn-ligne" id="lien-insta" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
+      </div>
+      <p id="contact-dev" data-dev-only hidden>[Dev] Renseigner email / instagram dans CONFIG (index.html).</p>
+    </div>
+    <form id="form" novalidate hidden>
+      <div><label for="prenom">Prénom</label><input id="prenom" name="prenom" autocomplete="given-name" required></div>
+      <div><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+      <button class="btn btn-violet" type="submit" id="envoi">Envoyer</button>
+      <p class="statut" id="statut" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><img class="logo" src="assets/logo-kr.png" alt="" width="56" height="56" loading="lazy"><strong style="font:400 1.75rem var(--f-titre)">kannrunn</strong></div>
+    <ul>
+      <li><a href="#collectif">Le collectif</a></li>
+      <li><a href="#sorties">Les sorties</a></li>
+      <li><a href="#equipe">L’équipe</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li id="pied-mail" hidden></li>
+      <li id="pied-insta" hidden></li>
+    </ul>
+    <div>
+      <small>Association créée par Anatole, Nada, Khamzat et Nathan.</small><br>
+      <small><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Politique de confidentialité</a></small>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CONFIG : seul endroit à modifier pour les contenus. Laisser vide = élément masqué. ===== */
+const CONFIG = {
+  email: "",            // ex. "contact@..." (à confirmer)
+  instagram: "",        // URL complète du compte confirmé
+  formEndpoint: "",     // URL d'un service de formulaire (ex. Formspree). Vide = pas de formulaire
+  presentation: "",     // texte de présentation précise (ville, activité...)
+  tenuesDisponiblesEnConcept: false,
+  equipe: {             // photo: "assets/photos/anatole.jpg", bio: "..."
+    Anatole: {photo:"", bio:""}, Nada: {photo:"", bio:""},
+    Khamzat: {photo:"", bio:""}, Nathan: {photo:"", bio:""}
+  },
+  sorties: []           // {date, heure, lieu, distance, allure, participation}, confirmées uniquement
+};
+
+const $ = s => document.querySelector(s);
+const show = (el, on = true) => { el.hidden = !on; };
+
+/* Contact */
+if (CONFIG.email) {
+  const a = $("#lien-mail"); a.href = "mailto:" + CONFIG.email; show(a);
+  const li = $("#pied-mail"); li.innerHTML = '<a href="mailto:' + CONFIG.email + '">' + CONFIG.email + '</a>'; show(li);
+}
+if (CONFIG.instagram) {
+  ["#lien-insta", "#insta-sorties"].forEach(s => { const a = $(s); a.href = CONFIG.instagram; show(a); });
+  const li = $("#pied-insta"); li.innerHTML = '<a href="' + CONFIG.instagram + '" target="_blank" rel="noopener">Instagram</a>'; show(li);
+}
+if (!CONFIG.email && !CONFIG.instagram && !CONFIG.formEndpoint && document.documentElement.hasAttribute("data-dev")) show($("#contact-dev"));
+if (CONFIG.presentation) { const p = $("#presentation"); p.textContent = CONFIG.presentation; show(p); }
+if (CONFIG.tenuesDisponiblesEnConcept) show($("#concept-tenues"));
+
+/* Sorties */
+if (CONFIG.sorties.length) {
+  const ul = $("#liste-sorties");
+  const ligne = (k, v) => v ? "<dt>" + k + "</dt><dd>" + v + "</dd>" : "";
+  ul.innerHTML = CONFIG.sorties.map(s => '<li class="sortie reveal"><h3>' + s.date + (s.heure ? " · " + s.heure : "") + "</h3><dl>" +
+    ligne("Rendez-vous", s.lieu) + ligne("Distance", s.distance) + ligne("Allure", s.allure) + ligne("Participation", s.participation) + "</dl></li>").join("");
+  show(ul); show($("#sorties-vide"), false);
+}
+
+/* Équipe */
+document.querySelectorAll("#liste-equipe li").forEach(li => {
+  const d = CONFIG.equipe[li.querySelector("h3").textContent] || {};
+  if (d.photo) {
+    const fig = li.querySelector("figure"), img = new Image();
+    img.src = d.photo; img.alt = "Portrait de " + li.querySelector("h3").textContent; img.loading = "lazy";
+    fig.appendChild(img); fig.removeAttribute("data-manque");
+  }
+  if (d.bio) { const p = li.querySelector(".bio"); p.textContent = d.bio; show(p); }
+});
+
+/* Formulaire : actif uniquement si un point d'envoi réel est configuré */
+if (CONFIG.formEndpoint) {
+  const f = $("#form"), st = $("#statut"), btn = $("#envoi"); show(f);
+  f.addEventListener("submit", async e => {
+    e.preventDefault(); st.className = "statut";
+    if (!f.checkValidity()) { st.textContent = "Merci de remplir les trois champs avec une adresse e-mail valide."; st.classList.add("erreur"); return; }
+    btn.disabled = true; st.textContent = "Envoi en cours…";
+    try {
+      const r = await fetch(CONFIG.formEndpoint, {method: "POST", headers: {"Accept": "application/json", "Content-Type": "application/json"}, body: JSON.stringify(Object.fromEntries(new FormData(f)))});
+      if (!r.ok) throw 0;
+      f.reset(); st.textContent = "Message envoyé. Merci, nous vous répondons vite.";
+    } catch { st.textContent = "L’envoi a échoué. Réessayez ou écrivez-nous directement."; st.classList.add("erreur"); }
+    btn.disabled = false;
+  });
+}
+
+/* Navigation : fond au défilement + menu mobile */
+const nav = $("#nav"), menu = $("#menu"), burger = $("#burger");
+const onScroll = () => nav.classList.toggle("solide", scrollY > 40);
+onScroll(); addEventListener("scroll", onScroll, {passive: true});
+const toggle = o => { menu.classList.toggle("ouvert", o); burger.setAttribute("aria-expanded", o); document.body.style.overflow = o ? "hidden" : ""; (o ? $("#fermer") : burger).focus(); };
+burger.onclick = () => toggle(true); $("#fermer").onclick = () => toggle(false);
+menu.querySelectorAll("a").forEach(a => a.onclick = () => toggle(false));
+addEventListener("keydown", e => { if (e.key === "Escape" && menu.classList.contains("ouvert")) toggle(false); });
+
+/* Apparitions au défilement */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("vu"); io.unobserve(e.target); } }), {threshold: .15});
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
