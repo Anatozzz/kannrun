@@ -13,7 +13,6 @@
 <meta property="og:image" content="assets/og.jpg"><!-- remplacer par l'URL absolue une fois le site en ligne -->
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="preload" href="assets/fonts/Adumu-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -23,7 +22,7 @@
 <header class="nav" id="nav">
   <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="nav-in">
-    <a href="#top" aria-label="kannrunn, retour en haut"><img class="logo" src="assets/logo-kr.png" alt="Monogramme kr de kannrunn" width="44" height="44"></a>
+    <a class="brand" href="#top" aria-label="kannrunn, retour en haut"><img class="logo" src="assets/logo-kr.png" alt="" width="44" height="44" onerror="this.remove()"><span>kannrunn<span class="brand-dot" aria-hidden="true">.</span></span></a>
     <nav aria-label="Navigation principale">
       <ul>
         <li><a href="#collectif">Le collectif</a></li>
@@ -49,13 +48,14 @@
 <main id="top">
 
 <section class="section violet hero" aria-labelledby="titre-hero">
+  <div class="running-lanes" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
   <div class="hero-photo" data-manque="vidéo de running (assets/video/) ou photo (assets/photos/hero.jpg)">
     <img src="assets/photos/hero.jpg" alt="" width="1600" height="1000" fetchpriority="high" onerror="this.remove()">
     <video id="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
   </div>
   <svg class="trace" viewBox="0 0 480 200" aria-hidden="true" focusable="false"><path d="M8 180C80 180 90 60 170 90S260 170 330 60 420 20 468 70" pathLength="1" fill="none" stroke="#F88FD0" stroke-width="4" stroke-linecap="round"/><circle cx="468" cy="70" r="9" fill="#F88FD0"/></svg>
   <button class="pause" id="pause" hidden aria-label="Mettre la vidéo en pause">Pause</button>
-  <img class="motif motif-anim" src="assets/logo-kr.png" alt="" aria-hidden="true">
+  <img class="motif motif-anim" src="assets/logo-kr.png" alt="" aria-hidden="true" onerror="this.remove()">
   <div class="wrap">
     <p class="lieu"><span class="point" aria-hidden="true"></span>Association de running d’étudiants, à Annecy</p>
     <h1 id="titre-hero"><span>On court.</span> <span>On se retrouve.</span> <span>On avance.</span></h1>
@@ -64,12 +64,13 @@
       <a class="btn btn-rose" href="#rejoindre">Rejoindre le groupe</a>
       <a class="btn btn-ligne" href="#collectif">Découvrir le collectif</a>
     </div>
-    <a class="defiler" href="#collectif" aria-label="Faire défiler vers le collectif">Défiler ↓</a>
+    <div class="hero-bottom"><a class="defiler" href="#collectif" aria-label="Faire défiler vers le collectif">Découvrir <span aria-hidden="true">↓</span></a><span>Du lien. Du mouvement. Ensemble.</span></div>
   </div>
 </section>
 
 <section class="section clair collectif" id="collectif" aria-labelledby="titre-collectif">
   <div class="wrap">
+    <p class="eyebrow"><span>01 / Le collectif</span><span>Le plaisir avant le chrono</span></p>
     <div class="duo">
       <h2 id="titre-collectif" class="reveal">Quatre personnes. Une envie : courir ensemble.</h2>
       <div class="reveal" style="--i:1">
@@ -90,8 +91,9 @@
 </section>
 
 <section class="section violet local" id="annecy" aria-labelledby="titre-local">
-  <img class="motif" src="assets/logo-kr.png" alt="" aria-hidden="true" loading="lazy">
+  <img class="motif" src="assets/logo-kr.png" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
   <div class="wrap">
+    <p class="eyebrow">Notre terrain de jeu</p>
     <h2 id="titre-local" class="reveal">Annecy, on y court.</h2>
     <p class="chapeau reveal" style="--i:1">Un collectif d’étudiants, un terrain de jeu local. Pas besoin d’aller loin pour se retrouver.</p>
   </div>
@@ -99,6 +101,7 @@
 
 <section class="section clair sorties" id="sorties" aria-labelledby="titre-sorties">
   <div class="wrap">
+    <p class="eyebrow"><span>02 / Les sorties</span><span>On se retrouve dehors</span></p>
     <h2 id="titre-sorties" class="reveal">Le prochain départ, c’est ensemble.</h2>
     <ul class="liste-sorties" id="liste-sorties" hidden></ul>
     <div class="vide reveal" id="sorties-vide">
@@ -113,6 +116,7 @@
 
 <section class="section rose sur-clair rejoindre" id="rejoindre" aria-labelledby="titre-rejoindre">
   <div class="wrap">
+    <p class="eyebrow">Le collectif commence avec toi</p>
     <h2 id="titre-rejoindre" class="reveal">Rejoins kannrunn.</h2>
     <p class="chapeau reveal" style="--i:1">Envie de courir à Annecy avec nous ?</p>
     <p class="reveal" id="wa-note" hidden>Le plus simple : rejoindre notre groupe WhatsApp.</p>
@@ -125,7 +129,8 @@
 
 <section class="section clair equipe" id="equipe" aria-labelledby="titre-equipe">
   <div class="wrap">
-    <h2 id="titre-equipe" class="reveal">Anatole — Nada — Khamzat — Nathan</h2>
+    <p class="eyebrow"><span>03 / L’équipe</span><span>À l’origine de kannrunn</span></p>
+    <h2 id="titre-equipe" class="reveal">Quatre élans.<br>Un même collectif.</h2>
     <ul id="liste-equipe">
       <li class="reveal"><figure class="photo" data-manque="photo d’Anatole"></figure><h3>Anatole</h3><p class="bio" hidden></p></li>
       <li class="reveal" style="--i:1"><figure class="photo" data-manque="photo de Nada"></figure><h3>Nada</h3><p class="bio" hidden></p></li>
@@ -139,7 +144,7 @@
   <div class="wrap">
     <h2 id="titre-identite" class="reveal">L’univers kannrunn</h2>
     <div class="lookbook">
-      <img class="logo-grand reveal" src="assets/logo-kr.png" alt="Monogramme kr, rose sur fond violet" loading="lazy" width="256" height="256">
+      <img class="logo-grand reveal" src="assets/logo-kr.png" alt="Monogramme kr, rose sur fond violet" loading="lazy" width="256" height="256" onerror="this.remove()">
       <div class="reveal" style="--i:1">
         <div class="teintes" role="list" aria-label="Couleurs de la marque">
           <div class="teinte v" role="listitem">Violet</div>
@@ -155,13 +160,14 @@
 <section class="section clair contact" id="contact" aria-labelledby="titre-contact">
   <div class="wrap">
     <div>
+      <p class="eyebrow">04 / On en parle ?</p>
       <h2 id="titre-contact" class="reveal">Envie de courir avec nous ?</h2>
       <p class="chapeau reveal" style="--i:1">Une question sur le collectif ou les prochaines sorties ? Écrivez-nous.</p>
       <div class="liens">
         <a class="btn btn-violet" id="lien-mail" href="#" hidden>Envoyer un e-mail</a>
         <a class="btn btn-ligne" id="lien-insta" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
       </div>
-      <p id="contact-dev" data-dev-only hidden>[Dev] Renseigner email / instagram dans CONFIG (index.html).</p>
+      <p id="contact-dev" data-dev-only hidden>Les coordonnées du collectif seront bientôt disponibles ici.</p>
     </div>
     <form id="form" novalidate hidden>
       <div><label for="prenom">Prénom</label><input id="prenom" name="prenom" autocomplete="given-name" required></div>
@@ -177,7 +183,7 @@
 
 <footer>
   <div class="wrap">
-    <div><img class="logo" src="assets/logo-kr.png" alt="" width="56" height="56" loading="lazy"><strong style="font:400 1.75rem var(--f-titre)">kannrunn</strong></div>
+    <div><img class="logo" src="assets/logo-kr.png" alt="" width="56" height="56" loading="lazy" onerror="this.remove()"><strong style="font:400 1.75rem var(--f-titre)">kannrunn</strong></div>
     <ul>
       <li><a href="#collectif">Le collectif</a></li>
       <li><a href="#sorties">Les sorties</a></li>
@@ -296,6 +302,9 @@ pz.onclick = () => {
 /* Apparitions au défilement */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("vu"); io.unobserve(e.target); } }), {threshold: .15});
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+document.fonts.load('400 1em "Adumu"').then(fonts => {
+  if (fonts.length) document.documentElement.classList.add("adumu-ready");
+}).catch(() => {});
 </script>
 </body>
 </html>
