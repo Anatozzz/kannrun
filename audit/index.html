@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Audit terrain · Polyglotte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="audit.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="barre">
+    <div class="barre__inner">
+      <p class="marque"><span class="marque__nom">Polyglotte</span> <span class="marque__outil">Outil d'audit</span></p>
+      <nav class="onglets" aria-label="Vues">
+        <button type="button" class="onglet" data-vue="audit" aria-current="page">Audit</button>
+        <button type="button" class="onglet" data-vue="pipeline">Pipeline <span class="onglet__compte" id="compte-pipeline">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="alerte" id="alerte-stockage" role="status" hidden>
+    Le stockage du navigateur est indisponible (navigation privée ?). Les audits ne seront pas conservés : exportez-les en CSV avant de fermer la page.
+  </div>
+  <div class="alerte alerte--douce" id="alerte-config" role="status" hidden>
+    Coordonnées absentes : renseignez <code>assets/js/config.js</code>. En attendant, l'audit imprimé laisse une ligne à compléter à la main.
+  </div>
+
+  <main id="contenu">
+    <!-- ============ VUE AUDIT ============ -->
+    <section id="vue-audit" class="vue" aria-labelledby="titre-audit">
+      <div class="disposition">
+        <form id="form-audit" class="formulaire" novalidate>
+          <div class="formulaire__tete">
+            <h1 id="titre-audit">Nouvel audit</h1>
+            <p class="aide">À remplir depuis la fiche Google Maps du restaurant. L'aperçu se met à jour en direct.</p>
+          </div>
+          <input type="hidden" name="id">
+
+          <fieldset class="bloc">
+            <legend>Restaurant</legend>
+            <div class="champ">
+              <label for="f-nom">Nom du restaurant <span class="requis" aria-hidden="true">*</span></label>
+              <input id="f-nom" name="nom" type="text" required autocomplete="off" maxlength="80" aria-describedby="err-nom">
+              <p class="erreur" id="err-nom" aria-live="polite"></p>
+            </div>
+            <div class="champ">
+              <label for="f-quartier">Quartier</label>
+              <select id="f-quartier" name="quartier">
+                <option>Vieille ville</option>
+                <option>Bords du lac / Pâquier</option>
+                <option>Centre / gare</option>
+                <option>Annecy-le-Vieux</option>
+                <option>Sévrier / rive ouest</option>
+                <option>Talloires / rive est</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="rangee">
+              <div class="champ">
+                <label for="f-note">Note Google</label>
+                <input id="f-note" name="note" type="text" inputmode="decimal" placeholder="4,5" maxlength="4" aria-describedby="aide-note err-note">
+                <p class="aide" id="aide-note">Sur 5</p>
+                <p class="erreur" id="err-note" aria-live="polite"></p>
+              </div>
+              <div class="champ">
+                <label for="f-total">Nombre total d'avis</label>
+                <input id="f-total" name="totalAvis" type="number" inputmode="numeric" min="0" step="1" placeholder="312" aria-describedby="err-total">
+                <p class="erreur" id="err-total" aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="bloc">
+            <legend>Les 30 derniers avis</legend>
+            <p class="aide" id="aide-echantillon">Comptez sur les 30 avis les plus récents (ou tous s'il y en a moins).</p>
+            <div class="rangee rangee--3">
+              <div class="champ">
+                <label for="f-sansrep">Sans réponse</label>
+                <input id="f-sansrep" name="sansReponse" type="number" inputmode="numeric" min="0" max="30" step="1" placeholder="0" aria-describedby="aide-echantillon err-sansrep">
+                <p class="erreur" id="err-sansrep" aria-live="polite"></p>
+              </div>
+              <div class="champ">
+                <label for="f-etr">En langue étrangère</label>
+                <input id="f-etr" name="etrangers" type="number" inputmode="numeric" min="0" max="30" step="1" placeholder="0" aria-describedby="aide-echantillon err-etr">
+                <p class="erreur" id="err-etr" aria-live="polite"></p>
+              </div>
+              <div class="champ">
+                <label for="f-etrsr">Dont sans réponse</label>
+                <input id="f-etrsr" name="etrangersSansReponse" type="number" inputmode="numeric" min="0" max="30" step="1" placeholder="0" aria-describedby="err-etrsr">
+                <p class="erreur" id="err-etrsr" aria-live="polite"></p>
+              </div>
+            </div>
+            <fieldset class="sous-bloc">
+              <legend>Langues vues dans les avis</legend>
+              <div class="puces">
+                <label class="puce"><input type="checkbox" name="langues" value="EN"><span>EN</span></label>
+                <label class="puce"><input type="checkbox" name="langues" value="DE"><span>DE</span></label>
+                <label class="puce"><input type="checkbox" name="langues" value="IT"><span>IT</span></label>
+                <label class="puce"><input type="checkbox" name="langues" value="ES"><span>ES</span></label>
+                <label class="puce"><input type="checkbox" name="langues" value="NL"><span>NL</span></label>
+                <label class="puce"><input type="checkbox" name="langues" value="autre"><span>Autre</span></label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset class="bloc">
+            <legend>Menu et allergènes</legend>
+            <fieldset class="sous-bloc">
+              <legend>Menu en ligne</legend>
+              <div class="choix">
+                <label class="option"><input type="radio" name="menu" value="aucun" checked><span>Aucun</span></label>
+                <label class="option"><input type="radio" name="menu" value="fr"><span>FR seulement</span></label>
+                <label class="option"><input type="radio" name="menu" value="fr-en"><span>FR + EN</span></label>
+                <label class="option"><input type="radio" name="menu" value="multi"><span>Multilingue</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="sous-bloc">
+              <legend>Allergènes indiqués</legend>
+              <div class="choix">
+                <label class="option"><input type="radio" name="allergenes" value="non" checked><span>Non</span></label>
+                <label class="option"><input type="radio" name="allergenes" value="partiel"><span>Partiellement</span></label>
+                <label class="option"><input type="radio" name="allergenes" value="oui"><span>Oui</span></label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset class="bloc">
+            <legend>Fiche Google</legend>
+            <div class="bascules">
+              <label class="bascule"><input type="checkbox" name="horaires"><span>Horaires à jour</span></label>
+              <label class="bascule"><input type="checkbox" name="photos"><span>Photos de moins de 6 mois</span></label>
+              <label class="bascule"><input type="checkbox" name="lienMenu"><span>Lien vers le menu</span></label>
+              <label class="bascule"><input type="checkbox" name="site"><span>Site web</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="bloc">
+            <legend>Suivi</legend>
+            <div class="rangee">
+              <div class="champ">
+                <label for="f-statut">Statut</label>
+                <select id="f-statut" name="statut"></select>
+              </div>
+              <div class="champ">
+                <label for="f-relance">Date de relance</label>
+                <input id="f-relance" name="relance" type="date">
+              </div>
+            </div>
+            <div class="champ">
+              <label for="f-notes">Notes internes <span class="aide-inline">(non imprimées)</span></label>
+              <textarea id="f-notes" name="notes" rows="3" maxlength="2000" placeholder="Gérant présent le mardi, terrasse chargée à midi…"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="barre-actions">
+            <button type="submit" class="btn btn--primaire" id="btn-enregistrer">Enregistrer</button>
+            <button type="button" class="btn btn--accent" id="btn-imprimer">Imprimer l'audit</button>
+            <button type="button" class="btn btn--discret" id="btn-nouveau">Nouveau</button>
+          </div>
+          <p class="statut-action" id="message-action" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="apercu" aria-labelledby="titre-apercu">
+          <div class="apercu__tete">
+            <h2 id="titre-apercu">Aperçu A4</h2>
+            <p class="score-live" aria-live="polite"><span class="visually-hidden">Score Polyglotte : </span><strong id="score-live">0</strong>/100</p>
+          </div>
+          <div class="apercu__cadre" id="apercu-cadre">
+            <article class="feuille" id="feuille" aria-label="Audit imprimable"></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VUE PIPELINE ============ -->
+    <section id="vue-pipeline" class="vue" aria-labelledby="titre-pipeline" hidden>
+      <div class="pipeline">
+        <div class="pipeline__tete">
+          <h1 id="titre-pipeline">Pipeline de prospection</h1>
+          <div class="pipeline__outils">
+            <button type="button" class="btn btn--discret" id="btn-export">Exporter CSV</button>
+            <label class="btn btn--discret btn--fichier">Importer CSV
+              <input type="file" id="input-import" accept=".csv,text/csv" class="visually-hidden">
+            </label>
+          </div>
+        </div>
+        <p class="statut-action" id="message-pipeline" role="status" aria-live="polite"></p>
+
+        <dl class="compteurs" id="compteurs">
+          <div class="compteur"><dt>Visites</dt><dd id="c-visites">0</dd></div>
+          <div class="compteur"><dt>Signés</dt><dd id="c-signes">0</dd></div>
+          <div class="compteur"><dt>Conversion</dt><dd id="c-conversion">–</dd></div>
+          <div class="compteur compteur--accent"><dt>MRR</dt><dd id="c-mrr">0 €</dd></div>
+        </dl>
+        <p class="aide">Visites : fiches dont le statut n'est plus « À visiter ». Signés : Signé Pack + Abonné. MRR : abonnés × 59 €.</p>
+
+        <div class="filtres" role="group" aria-label="Filtrer par statut" id="filtres"></div>
+
+        <div class="liste" id="liste-prospects"></div>
+        <p class="vide" id="liste-vide" hidden>Aucun prospect pour ce filtre. Remplissez un audit puis « Enregistrer ».</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="audit.js"></script>
+</body>
+</html>
