@@ -57,13 +57,15 @@ Scénario prudent : 13 598 € de CA. Scénario ambitieux : 37 422 €. Hypothè
 | `audit/` | outil interne : audit imprimable et mini-CRM de prospection |
 | `tools/` | scripts IA : brouillons de réponses aux avis, traduction de menus vers le JSON |
 | `docs/` | business plan, plan de lancement sur 30 jours, scripts terrain, juridique, CGV, expansion, tableau de suivi KPI |
-| `assets/` | styles partagés (`css/tokens.css`), configuration des coordonnées (`js/config.js`), bibliothèque QR embarquée (`vendor/qrcode.js`, licence MIT) |
+| `assets/` | styles partagés (`css/tokens.css`), configuration des coordonnées (`js/config.js`), bibliothèque QR embarquée (`vendor/qrcode.js`, licence MIT), polices auto-hébergées (`fonts/`, licence OFL), image de partage (`og.png`) |
 
-## Mise en ligne (5 minutes, 0 €)
+## Mise en ligne
 
-1. Sur GitHub : **Settings → Pages → Deploy from a branch** → `main` / racine.
-2. Renseignez vos coordonnées dans `assets/js/config.js` (email, téléphone, lien du formulaire, SIRET).
-3. Facultatif : achetez un nom de domaine (.fr, environ 9 €/an) et faites-le pointer vers GitHub Pages.
+Le dépôt est relié à **Netlify** (projet `kannrunn`) : chaque push sur `main` est déployé automatiquement sur https://kannrunn.netlify.app, et chaque pull request reçoit une URL de prévisualisation.
+
+1. Renseignez vos coordonnées dans `assets/js/config.js` (email, téléphone, lien du formulaire, SIRET).
+2. Facultatif : achetez un nom de domaine (.fr, environ 9 €/an), branchez-le dans Netlify (*Domain management*), puis remplacez `kannrunn.netlify.app` dans les balises `og:` et `canonical` de `index.html`.
+3. `_headers` interdit l'indexation des outils internes (`/audit/`, `/menu/qr.html`) et des menus clients, et ajoute des en-têtes de sécurité.
 
 Pour tester en local :
 
