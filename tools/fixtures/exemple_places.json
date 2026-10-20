@@ -1,0 +1,191 @@
+{
+ "_avertissement": "EXEMPLE FICTIF pour les tests et le mode --fixtures de tools/prospects.py. Noms, SIREN/SIRET, adresses, notes et identifiants sont INVENTÉS ; seule la structure reproduit la réponse documentée de l'API.",
+ "_format": "Chaque entrée : 'requete_contient' (texte cherché dans textQuery) -> 'reponse' (corps JSON renvoyé par POST https://places.googleapis.com/v1/places:searchText avec le FieldMask places.id,places.displayName,places.location,places.rating,places.userRatingCount,places.websiteUri,places.googleMapsUri). Une requête sans correspondance renvoie {} (réponse vide de l'API).",
+ "reponses": [
+  {
+   "requete_contient": "Fictif du Thiou",
+   "reponse": {
+    "places": [
+     {
+      "id": "ChIJFICTIF0000000000001",
+      "displayName": {
+       "text": "Le Fictif du Thiou",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.89858,
+       "longitude": 6.12557
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000001",
+      "rating": 4.2,
+      "userRatingCount": 850
+     }
+    ]
+   }
+  },
+  {
+   "requete_contient": "Table Imaginaire",
+   "reponse": {
+    "places": [
+     {
+      "id": "ChIJFICTIF0000000000002",
+      "displayName": {
+       "text": "La Table Imaginaire",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.9041,
+       "longitude": 6.13415
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000002",
+      "rating": 4.4,
+      "userRatingCount": 120
+     }
+    ]
+   }
+  },
+  {
+   "requete_contient": "Chez Jeannot Fictif",
+   "reponse": {
+    "places": [
+     {
+      "id": "ChIJFICTIF0000000000003",
+      "displayName": {
+       "text": "Chez Jeannot",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.89903,
+       "longitude": 6.12402
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000003",
+      "rating": 3.9,
+      "userRatingCount": 310,
+      "websiteUri": "https://exemple.invalid/jeannot"
+     }
+    ]
+   }
+  },
+  {
+   "requete_contient": "Auberge du Lac Fictif",
+   "reponse": {
+    "places": [
+     {
+      "id": "ChIJFICTIF0000000000004",
+      "displayName": {
+       "text": "L'Auberge du Lac Fictif",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.84102,
+       "longitude": 6.21305
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000004",
+      "rating": 4.6,
+      "userRatingCount": 640,
+      "websiteUri": "https://exemple.invalid/auberge"
+     }
+    ]
+   }
+  },
+  {
+   "requete_contient": "Guinguette Exemple",
+   "reponse": {
+    "places": [
+     {
+      "id": "ChIJFICTIF0000000000005",
+      "displayName": {
+       "text": "La Guinguette Exemple",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.86406,
+       "longitude": 6.14104
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000005",
+      "rating": 4.0,
+      "userRatingCount": 1250
+     }
+    ]
+   }
+  },
+  {
+   "requete_contient": "Cafe des Fixtures",
+   "reponse": {
+    "places": [
+     {
+      "id": "ChIJFICTIF0000000000006",
+      "displayName": {
+       "text": "Le Café des Fixtures",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.90192,
+       "longitude": 6.12255
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000006",
+      "rating": 4.1,
+      "userRatingCount": 95,
+      "websiteUri": "https://exemple.invalid/cafe-fixtures"
+     }
+    ]
+   }
+  },
+  {
+   "requete_contient": "Ferme Demo",
+   "reponse": {
+    "places": [
+     {
+      "id": "ChIJFICTIF0000000000007",
+      "displayName": {
+       "text": "La Ferme Démo",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.836,
+       "longitude": 6.028
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000007",
+      "rating": 4.5,
+      "userRatingCount": 40
+     }
+    ]
+   }
+  },
+  {
+   "requete_contient": "Pizzeria Demo",
+   "reponse": {
+    "places": [
+     {
+      "id": "ChIJFICTIF0000000000099",
+      "displayName": {
+       "text": "Pizza Autre",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.8319,
+       "longitude": 6.1621
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000099",
+      "rating": 3.2,
+      "userRatingCount": 12
+     },
+     {
+      "id": "ChIJFICTIF0000000000008",
+      "displayName": {
+       "text": "Pizzeria Démo",
+       "languageCode": "fr"
+      },
+      "location": {
+       "latitude": 45.83205,
+       "longitude": 6.16195
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000000008",
+      "rating": 3.7,
+      "userRatingCount": 230
+     }
+    ]
+   }
+  }
+ ]
+}
