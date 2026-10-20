@@ -29,7 +29,7 @@
         <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
           <path d="M12 6h40a8 8 0 0 1 8 8v26a8 8 0 0 1-8 8H30L16 59V48h-4a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8z" fill="currentColor"/>
           <circle cx="48" cy="14" r="5" fill="var(--couchant)"/>
-          <text x="31" y="38" font-family="Georgia, serif" font-size="30" font-weight="700" fill="var(--creme)" text-anchor="middle">P</text>
+          <text x="31" y="38" font-family="Georgia, serif" font-size="30" font-weight="700" fill="var(--bg)" text-anchor="middle">P</text>
         </svg>
         <span class="logo__txt">Polyglotte</span>
       </a>
@@ -71,15 +71,16 @@
           <svg class="hero__paysage" viewBox="0 0 520 300" preserveAspectRatio="xMidYMax meet" focusable="false">
             <defs>
               <linearGradient id="g-ciel" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#e8743b" stop-opacity=".0"/>
-                <stop offset="1" stop-color="#e8743b" stop-opacity=".22"/>
+                <stop offset="0" stop-color="#e8743b" stop-opacity="0"/>
+                <stop offset=".55" stop-color="#e8743b" stop-opacity=".08"/>
+                <stop offset="1" stop-color="#e8743b" stop-opacity=".4"/>
               </linearGradient>
               <linearGradient id="g-lac" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stop-color="#2bb3a3" stop-opacity=".55"/>
-                <stop offset="1" stop-color="#1f7a9c" stop-opacity=".15"/>
+                <stop offset="1" stop-color="#0b2f45" stop-opacity=".9"/>
               </linearGradient>
             </defs>
-            <rect x="0" y="60" width="520" height="150" fill="url(#g-ciel)"/>
+            <rect x="0" y="0" width="520" height="214" fill="url(#g-ciel)"/>
             <circle cx="360" cy="150" r="58" fill="#e8743b" opacity=".9"/>
             <path d="M0 205 L70 140 L110 168 L170 92 L215 140 L250 118 L310 180 L360 128 L410 160 L455 110 L520 170 L520 210 L0 210Z" fill="#13506f"/>
             <path d="M0 210 L60 172 L120 196 L190 150 L250 192 L330 160 L400 196 L470 166 L520 190 L520 214 L0 214Z" fill="#0b2f45"/>
@@ -251,7 +252,7 @@
             <li>Les 14 allergènes réglementaires, plat par plat</li>
             <li>Mises à jour illimitées avec l'abonnement Sérénité</li>
           </ul>
-          <p class="demo__essai">Essayez ci-contre&nbsp;: changez la langue.</p>
+          <p class="demo__essai">Essayez&nbsp;: changez la langue du menu.</p>
           <a class="btn btn--accent" href="menu/?r=demo">Voir un menu de démonstration</a>
         </div>
 

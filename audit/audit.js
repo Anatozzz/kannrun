@@ -169,13 +169,18 @@
   function calculer(p) {
     var total = entier(p.totalAvis);
     var ech = total != null && total > 0 ? Math.min(30, total) : 30;
+    // Un champ laissé vide = « non renseigné » : 0 point (saisir 0 explicitement sinon).
+    var srSaisi = entier(p.sansReponse) != null;
+    var etrSaisi = entier(p.etrangers) != null;
+    var etrSrSaisi = entier(p.etrangersSansReponse) != null;
     var sr = Math.min(entier(p.sansReponse) || 0, ech);
     var etr = Math.min(entier(p.etrangers) || 0, ech);
-    var etrSr = Math.min(entier(p.etrangersSansReponse) || 0, etr, sr || etr);
+    var etrSr = Math.min(entier(p.etrangersSansReponse) || 0, etr);
     var aucunAvis = total === 0;
 
-    var ptsRep = aucunAvis ? 0 : Math.round(BAREME.reponses * (ech - sr) / ech);
-    var ptsEtr = aucunAvis ? 0 : (etr === 0 ? BAREME.etrangers : Math.round(BAREME.etrangers * (etr - etrSr) / etr));
+    var ptsRep = (aucunAvis || !srSaisi) ? 0 : Math.round(BAREME.reponses * (ech - sr) / ech);
+    var ptsEtr = (aucunAvis || !etrSaisi) ? 0 :
+      (etr === 0 ? BAREME.etrangers : (!etrSrSaisi ? 0 : Math.round(BAREME.etrangers * (etr - etrSr) / etr)));
     var ptsMenu = POINTS_MENU[p.menu] || 0;
     var ptsAll = POINTS_ALLERG[p.allergenes] || 0;
     var ptsFiche = 0;
@@ -198,7 +203,8 @@
     return {
       score: score, details: details, echantillon: ech, sansReponse: sr,
       etrangers: etr, etrangersSansReponse: etrSr, total: total, aucunAvis: aucunAvis,
-      tauxReponse: aucunAvis ? null : Math.round(100 * (ech - sr) / ech),
+      tauxReponse: (aucunAvis || !srSaisi) ? null : Math.round(100 * (ech - sr) / ech),
+      etrangersSaisi: etrSaisi,
       priorites: priorites(p, { ech: ech, sr: sr, etr: etr, etrSr: etrSr, aucunAvis: aucunAvis, details: details })
     };
   }
@@ -330,8 +336,8 @@
         s: c.total != null ? nombreFr(c.total) + " " + pluriel(c.total, "avis", "avis") : "" },
       { k: "Avis avec réponse", v: c.tauxReponse != null ? c.tauxReponse + "<small> %</small>" : "–",
         s: "sur les " + c.echantillon + " derniers" },
-      { k: "Avis en langue étrangère", v: String(c.etrangers),
-        s: c.etrangers ? c.etrangersSansReponse + " sans réponse" : "dans l'échantillon" },
+      { k: "Avis étrangers", v: c.etrangersSaisi ? String(c.etrangers) : "–",
+        s: !c.etrangersSaisi ? "non renseigné" : (c.etrangers ? c.etrangersSansReponse + " sans réponse" : "sur les " + c.echantillon + " derniers") },
       { k: "Langues vues", v: langues.length ? esc(langues.join(" · ")) : "–", s: "", petit: true },
       { k: "Menu en ligne", v: esc(MENU_LIB[p.menu]), s: "", petit: true },
       { k: "Allergènes", v: esc(ALLERG_LIB[p.allergenes]), s: "", petit: true }

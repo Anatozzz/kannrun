@@ -1,0 +1,41 @@
+{
+  "_avertissement": "Restaurant FICTIF de démonstration. Aucune de ces informations ne décrit un établissement réel.",
+  "nom": "Bistrot Polyglotte (démo)",
+  "ton": "chaleureux",
+  "signature": "Camille et l'équipe du Bistrot Polyglotte",
+  "prenom_gerant": "Camille",
+  "contact_prive": "bonjour@bistrot-polyglotte.example",
+  "faits_utiles": {
+    "specialites": [
+      "tartiflette au reblochon fermier",
+      "fondue savoyarde (2 personnes minimum)",
+      "diots au vin blanc et polenta",
+      "tarte aux myrtilles maison"
+    ],
+    "horaires": "du mardi au samedi, 12 h - 14 h et 19 h - 22 h ; fermé dimanche et lundi",
+    "terrasse": "terrasse ouverte aux beaux jours, selon la météo",
+    "reservation": "par téléphone ou sur place, conseillée le week-end",
+    "autres": [
+      "tous les plats sont préparés sur place",
+      "le fromage vient de fermes des Aravis",
+      "menu traduit en anglais, allemand, italien et espagnol, avec les allergènes"
+    ]
+  },
+  "ne_jamais_promettre": [
+    "un remboursement, un avoir ou un geste commercial",
+    "un repas, un dessert ou une boisson offerts",
+    "une table précise ou une réservation garantie",
+    "l'absence totale de traces d'allergènes",
+    "des nouveautés, travaux, recrutements ou changements d'horaires"
+  ],
+
+  "slug": "bistrot-polyglotte-demo",
+  "sous_titre": "Cuisine savoyarde · restaurant fictif de démonstration",
+  "adresse": "Annecy (adresse fictive)",
+  "telephone": "",
+  "avis_url": "",
+  "site": "",
+  "message_menu": "Bienvenue ! Tous nos plats sont préparés sur place. Le fromage vient de fermes des Aravis.",
+  "note_allergenes": "Allergènes indiqués d'après les déclarations du restaurant (14 allergènes réglementaires). En cas d'allergie ou d'intolérance, signalez-le à l'équipe avant de commander.",
+  "noms_proteges": []
+}

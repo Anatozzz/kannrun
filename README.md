@@ -31,6 +31,21 @@ Le détail et les sources sont dans [`docs/recherche.md`](docs/recherche.md).
 | Pack Démarrage | 290 € (**145 €** pour les 10 premiers restaurants) | fiche Google optimisée, menu QR en 5 langues, réponse aux 30 derniers avis, 10 chevalets QR |
 | Abonnement Sérénité | 59 €/mois sans engagement (590 €/an) | réponse à chaque avis sous 48 h, mises à jour du menu, 4 publications Google par mois, rapport mensuel |
 
+## Chiffres clés (business plan, scénario central)
+
+| | 12 mois |
+|---|---|
+| Investissement de départ | ~95 € |
+| Packs vendus | 47 (dont 10 « fondateurs ») |
+| Abonnés actifs à M12 | ~21, soit un MRR de 1 212 € |
+| Chiffre d'affaires | 21 136 € |
+| Résultat net (après URSSAF 21,2 % et coûts, avant IR) | 13 548 € |
+| Temps moyen | ~11 h/semaine (sprint de 30 h/semaine le 1er mois) |
+
+Scénario prudent : 13 598 € de CA. Scénario ambitieux : 37 422 €. Hypothèses et détail mois par mois dans [`docs/business-plan.md`](docs/business-plan.md).
+
+⚠️ **Signature chez le restaurateur.** Un professionnel de 5 salariés au plus, démarché hors établissement, peut avoir 14 jours de rétractation, et aucun paiement ne peut être encaissé avant 7 jours (art. L221-3 et L221-10 du code de la consommation). Le plan prévoit donc un lien de paiement envoyé à J+8. Voir [`docs/juridique-checklist.md`](docs/juridique-checklist.md).
+
 ## Contenu du dépôt
 
 | Chemin | Rôle |
@@ -60,7 +75,7 @@ python3 -m http.server 8000
 ## Ajouter un restaurant client
 
 1. Saisissez sa carte en français dans un CSV, sur le modèle de `tools/menu_exemple.csv`. Les allergènes sont **déclarés et validés par le restaurateur** : l'outil ne les devine jamais.
-2. `python3 tools/traduire_menu.py ...` génère `menu/restaurants/<slug>.json` (voir `tools/README.md`).
+2. `python3 tools/traduire_menu.py` produit le JSON multilingue. Placez-le dans `menu/restaurants/<slug>.json` : options `--sortie` et `--ecraser`, voir `tools/README.md`. Il faut `ANTHROPIC_API_KEY` ; le coût est de quelques centimes par menu.
 3. Relisez le fichier, puis publiez-le avec un commit sur `main`.
 4. Ouvrez `menu/qr.html?r=<slug>&nom=<Nom du restaurant>`, imprimez et découpez les chevalets.
 

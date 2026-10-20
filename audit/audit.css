@@ -1,7 +1,7 @@
 /* Polyglotte — outil d'audit terrain. Mobile d'abord. Tokens : ../assets/css/tokens.css */
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; scroll-padding-bottom: 96px; }
 body {
   margin: 0;
   background: var(--bg);
@@ -50,7 +50,11 @@ code { font-size: .9em; }
 .onglets { display: flex; gap: 4px; background: var(--bg); padding: 4px; border-radius: 999px; border: 1px solid var(--ligne); }
 .onglet {
   border: 0; background: transparent; padding: 8px 14px; border-radius: 999px; cursor: pointer;
-  font-weight: 600; font-size: .9rem; color: var(--texte-doux); min-height: 40px;
+  font-weight: 600; font-size: .9rem; color: var(--texte-doux); min-height: 40px; white-space: nowrap;
+}
+@media (max-width: 420px) {
+  .marque__outil { display: none; }
+  .onglet { padding: 8px 12px; }
 }
 .onglet[aria-current="page"] { background: var(--primaire); color: var(--bg); }
 .onglet__compte {
@@ -70,6 +74,7 @@ main { max-width: 1360px; margin: 0 auto; padding: 16px 16px 120px; }
 
 /* ---------------- Disposition audit ---------------- */
 .disposition { display: grid; gap: 24px; }
+.disposition > * { min-width: 0; }
 @media (min-width: 1024px) {
   .disposition { grid-template-columns: minmax(380px, 460px) 1fr; align-items: start; }
   .apercu { position: sticky; top: 76px; }
@@ -111,6 +116,7 @@ input[aria-invalid="true"] { border-color: var(--erreur); box-shadow: 0 0 0 1px 
 /* Puces de langues, options radio, bascules : grandes cibles tactiles */
 .puces, .choix { display: flex; flex-wrap: wrap; gap: 8px; }
 .puce, .option, .bascule { position: relative; cursor: pointer; }
+.puce, .option { display: inline-flex; }
 .puce input, .option input {
   position: absolute; opacity: 0; width: 100%; height: 100%; inset: 0; margin: 0; cursor: pointer;
 }
@@ -153,9 +159,11 @@ input[aria-invalid="true"] { border-color: var(--erreur); box-shadow: 0 0 0 1px 
   background: var(--surface); border-top: 1px solid var(--ligne);
   box-shadow: 0 -6px 20px rgba(0,0,0,.08);
 }
+.barre-actions .btn { min-width: 0; padding: 0 12px; }
 @media (min-width: 1024px) {
   .barre-actions { position: static; box-shadow: none; border: 0; padding: 4px 0 0; background: transparent; display: flex; flex-wrap: wrap; }
 }
+@media (max-width: 420px) { .masque-mobile { display: none; } }
 .statut-action { min-height: 1.4em; margin: 8px 0 0; font-size: .9rem; color: var(--primaire); font-weight: 600; }
 
 /* ---------------- Aperçu A4 ---------------- */
@@ -163,7 +171,7 @@ input[aria-invalid="true"] { border-color: var(--erreur); box-shadow: 0 0 0 1px 
 .apercu__tete h2 { font-size: 1.15rem; }
 .score-live { margin: 0; color: var(--texte-doux); }
 .score-live strong { font-family: var(--f-titre); font-size: 1.5rem; color: var(--primaire); }
-.apercu__cadre { position: relative; overflow: hidden; border-radius: 6px; }
+.apercu__cadre { position: relative; overflow: hidden; border-radius: 6px; width: 100%; }
 
 /* ================================================================
    La feuille : toujours « papier » clair, indépendamment du thème.
