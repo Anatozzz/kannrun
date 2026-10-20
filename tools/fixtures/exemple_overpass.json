@@ -1,0 +1,281 @@
+{
+ "_avertissement": "EXEMPLE FICTIF pour les tests et le mode --fixtures de tools/prospects.py. Noms, SIREN/SIRET, adresses, notes et identifiants sont INVENTÉS ; seule la structure reproduit la réponse documentée de l'API.",
+ "version": 0.6,
+ "generator": "Overpass API 0.7.62.7 375dc00a",
+ "osm3s": {
+  "timestamp_osm_base": "2026-10-20T08:00:00Z",
+  "timestamp_areas_base": "2026-10-19T22:00:00Z",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+ },
+ "elements": [
+  {
+   "type": "area",
+   "id": 3609900001,
+   "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "Annecy",
+    "ref:INSEE": "74010",
+    "type": "boundary"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000001,
+   "lat": 45.8986,
+   "lon": 6.1256,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Le Fictif du Thiou",
+    "cuisine": "savoyard",
+    "opening_hours": "Mo-Su 12:00-14:00,19:00-22:00",
+    "phone": "+33 4 00 00 00 01",
+    "addr:housenumber": "2",
+    "addr:street": "Quai Fictif du Thiou",
+    "addr:postcode": "74000",
+    "addr:city": "Annecy"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000002,
+   "lat": 45.904,
+   "lon": 6.1341,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "La Table Imaginaire",
+    "cuisine": "french"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000003,
+   "lat": 45.89905,
+   "lon": 6.12405,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Chez Jeannot Fictif",
+    "cuisine": "regional",
+    "website": "https://exemple.invalid/jeannot"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000004,
+   "lat": 45.90195,
+   "lon": 6.1225,
+   "tags": {
+    "amenity": "bar",
+    "name": "Le Café des Fixtures",
+    "website": "https://exemple.invalid/cafe-fixtures",
+    "contact:phone": "+33 4 00 00 00 09"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000005,
+   "lat": 45.9201,
+   "lon": 6.1449,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Bistrot des Essais"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000006,
+   "lat": 45.89772,
+   "lon": 6.12335,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Crêperie Test",
+    "cuisine": "crepe",
+    "website:menu": "https://exemple.invalid/creperie/menu"
+   }
+  },
+  {
+   "type": "way",
+   "id": 990000101,
+   "center": {
+    "lat": 45.9027,
+    "lon": 6.1365
+   },
+   "tags": {
+    "amenity": "ice_cream",
+    "name": "Glaces Imaginaires"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000007,
+   "lat": 45.9006,
+   "lon": 6.122,
+   "tags": {
+    "amenity": "cafe",
+    "name": "Brioche Dorée",
+    "brand": "Brioche Dorée",
+    "brand:wikidata": "Q2925147"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000008,
+   "lat": 45.8988,
+   "lon": 6.1259,
+   "tags": {
+    "amenity": "pub",
+    "name": "Bar Voisin Exemple"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000009,
+   "lat": 45.8995,
+   "lon": 6.125,
+   "tags": {
+    "amenity": "cafe"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000010,
+   "lat": 45.90485,
+   "lon": 6.12045,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Chez Paul Fictif"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000011,
+   "lat": 45.89905,
+   "lon": 6.10495,
+   "tags": {
+    "amenity": "fast_food",
+    "name": "Kebab de l'Exemple",
+    "cuisine": "kebab"
+   }
+  },
+  {
+   "type": "area",
+   "id": 3609900002,
+   "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "Talloires-Montmin",
+    "ref:INSEE": "74275",
+    "type": "boundary"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000020,
+   "lat": 45.84105,
+   "lon": 6.2131,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "L'Auberge du Lac Fictif",
+    "website": "https://exemple.invalid/auberge"
+   }
+  },
+  {
+   "type": "area",
+   "id": 3609900003,
+   "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "Sévrier",
+    "ref:INSEE": "74267",
+    "type": "boundary"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000030,
+   "lat": 45.8641,
+   "lon": 6.14105,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "La Guinguette Exemple"
+   }
+  },
+  {
+   "type": "area",
+   "id": 3609900004,
+   "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "Saint-Jorioz",
+    "ref:INSEE": "74242",
+    "type": "boundary"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000040,
+   "lat": 45.8321,
+   "lon": 6.1619,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Pizzeria Démo",
+    "cuisine": "pizza"
+   }
+  },
+  {
+   "type": "area",
+   "id": 3609900005,
+   "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "Menthon-Saint-Bernard",
+    "ref:INSEE": "74176",
+    "type": "boundary"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000050,
+   "lat": 45.86,
+   "lon": 6.195,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Le Petit Fictif",
+    "cuisine": "french"
+   }
+  },
+  {
+   "type": "area",
+   "id": 3609900006,
+   "tags": {
+    "admin_level": "8",
+    "boundary": "administrative",
+    "name": "Veyrier-du-Lac",
+    "ref:INSEE": "74299",
+    "type": "boundary"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000050,
+   "lat": 45.86,
+   "lon": 6.195,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Le Petit Fictif",
+    "cuisine": "french"
+   }
+  },
+  {
+   "type": "node",
+   "id": 990000060,
+   "lat": 45.8841,
+   "lon": 6.1751,
+   "tags": {
+    "amenity": "restaurant",
+    "name": "Le Belvédère Fictif",
+    "website": "https://exemple.invalid/belvedere"
+   }
+  }
+ ]
+}

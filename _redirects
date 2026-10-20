@@ -1,0 +1,6 @@
+# Netlify : documents internes non publiés (business plan, scripts, outils Python)
+/docs/*      /404.html  404!
+/tools/*     /404.html  404!
+/README.md   /404.html  404!
+/_headers    /404.html  404!
+/.gitignore  /404.html  404!

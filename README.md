@@ -56,6 +56,8 @@ Scénario prudent : 13 598 € de CA. Scénario ambitieux : 37 422 €. Hypothè
 | `menu/qr.html` | générateur de chevalets QR imprimables (4 par page A4) |
 | `audit/` | outil interne : audit imprimable et mini-CRM de prospection |
 | `tools/` | scripts IA : brouillons de réponses aux avis, traduction de menus vers le JSON |
+| `tools/prospects.py` | liste **tous** les restaurants, cafés et bars du Grand Annecy (Sirene + OpenStreetMap, Google Places en option), score de priorité, CSV à importer dans `audit/`. Voir `tools/README.md` |
+| `docs/outils-prospection.md` | comparatif des outils de prospection, règles CNIL, stack à 0 €, routine hebdomadaire, prompt de qualification |
 | `docs/` | business plan, plan de lancement sur 30 jours, scripts terrain, juridique, CGV, expansion, tableau de suivi KPI |
 | `assets/` | styles partagés (`css/tokens.css`), configuration des coordonnées (`js/config.js`), bibliothèque QR embarquée (`vendor/qrcode.js`, licence MIT), polices auto-hébergées (`fonts/`, licence OFL), image de partage (`og.png`) |
 
