@@ -1,0 +1,11 @@
+section,plat,description,prix,allergenes,tags
+Entrées,Salade savoyarde,"Salade verte, lardons, croûtons, reblochon chaud, noix, vinaigrette à la moutarde",12.50,gluten|lait|fruits-a-coque|moutarde,
+Entrées,Velouté de légumes du marché,"Légumes de saison, crème légère, croûtons",8,lait|celeri|gluten,vegetarien|fait-maison|local
+Plats,Tartiflette au reblochon fermier,"Pommes de terre, oignons, lardons, reblochon fermier, crème, salade verte",19,lait|sulfites,signature|fait-maison
+Plats,Fondue savoyarde,"Trois fromages de Savoie, vin blanc, pain de campagne. Prix par personne, 2 personnes minimum",22,lait|gluten|sulfites,vegetarien|local
+Plats,Diots au vin blanc et polenta,"Saucisses de Savoie mijotées au vin blanc, polenta crémeuse",18.50,lait|sulfites,local
+Plats,Filet de féra du lac,"Poisson du lac, beurre blanc, pommes de terre vapeur",24,poissons|lait|sulfites,local
+Plats,Risotto aux cèpes,"Riz arborio, cèpes, parmesan",17,lait|sulfites,vegetarien
+Desserts,Tarte aux myrtilles,"Pâte sablée, myrtilles, crème fouettée",7.50,gluten|oeufs|lait,fait-maison|signature
+Desserts,Sorbet citron,Deux boules,6,,vegan|sans-gluten
+Boissons,Jus de pomme de Savoie,25 cl,4.50,,local|vegan|sans-gluten

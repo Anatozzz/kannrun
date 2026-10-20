@@ -1,0 +1,57 @@
+/* Polyglotte — design tokens partagés (site, audit, menus QR) */
+:root {
+  --lac-900: #0b2f45;
+  --lac-700: #13506f;
+  --lac-500: #1f7a9c;
+  --turquoise: #2bb3a3;
+  --turquoise-50: #e6f6f3;
+  --creme: #fbf7f0;
+  --sable: #f1e8d8;
+  --couchant: #e8743b;
+  --couchant-50: #fdeee5;
+  --encre: #12212b;
+  --gris: #5b6b75;
+  --ligne: #dfd6c6;
+  --blanc: #ffffff;
+
+  --bg: var(--creme);
+  --surface: var(--blanc);
+  --texte: var(--encre);
+  --texte-doux: var(--gris);
+  --accent: var(--couchant);
+  --primaire: var(--lac-700);
+
+  --f-titre: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-texte: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --r-s: 8px;
+  --r-m: 14px;
+  --r-l: 22px;
+  --ombre: 0 1px 2px rgba(11, 47, 69, .06), 0 8px 24px rgba(11, 47, 69, .08);
+  --max: 1120px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1a22;
+    --surface: #13252f;
+    --texte: #eef3f5;
+    --texte-doux: #a8b8c0;
+    --ligne: #24404e;
+    --primaire: #6cc3d9;
+    --sable: #1a2f3b;
+    --turquoise-50: #123632;
+    --couchant-50: #3a2216;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1a22;
+  --surface: #13252f;
+  --texte: #eef3f5;
+  --texte-doux: #a8b8c0;
+  --ligne: #24404e;
+  --primaire: #6cc3d9;
+  --sable: #1a2f3b;
+  --turquoise-50: #123632;
+  --couchant-50: #3a2216;
+}

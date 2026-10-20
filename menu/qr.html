@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Chevalets QR</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2313506f'/%3E%3Cpath d='M18 46V18h15a10 10 0 0 1 0 20h-7v8z' fill='%23fbf7f0'/%3E%3Ccircle cx='46' cy='44' r='5' fill='%23e8743b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--texte); font: 400 1rem/1.5 var(--f-texte); }
+  .outil { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font: 650 1.6rem/1.2 var(--f-titre); margin: 0 0 4px; }
+  .aide { color: var(--texte-doux); margin: 0 0 18px; }
+  form { display: grid; gap: 12px; grid-template-columns: 1fr; background: var(--surface); border: 1px solid var(--ligne); border-radius: var(--r-m); padding: 16px; }
+  @media (min-width: 640px) { form { grid-template-columns: 1fr 1fr; } }
+  label { display: grid; gap: 4px; font-weight: 600; font-size: .9rem; }
+  input { font: inherit; padding: 10px 12px; border: 1px solid var(--ligne); border-radius: var(--r-s); background: var(--bg); color: var(--texte); min-width: 0; }
+  .large { grid-column: 1 / -1; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  button { font: 600 1rem var(--f-texte); padding: 11px 18px; border-radius: 999px; border: 0; cursor: pointer; background: var(--couchant); color: #fff; }
+  button.secondaire { background: transparent; color: var(--primaire); border: 1px solid var(--ligne); }
+  .url { font-size: .82rem; color: var(--texte-doux); word-break: break-all; margin: 14px 0 0; }
+
+  .planche { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 22px; }
+  .chevalet {
+    background: #fff; color: #12212b; border-radius: 12px; padding: 18px 16px 14px;
+    text-align: center; border: 1px solid #dfd6c6; display: flex; flex-direction: column; align-items: center;
+  }
+  .chevalet .resto { font: 650 1.15rem/1.2 var(--f-titre); margin: 0; color: #0b2f45; }
+  .chevalet .langs { font-size: .8rem; color: #5b6b75; margin: 4px 0 10px; letter-spacing: .02em; }
+  .chevalet svg { width: 170px; height: 170px; display: block; }
+  .chevalet .scan { font-weight: 600; margin: 10px 0 0; font-size: .92rem; }
+  .chevalet .scan span { color: #e8743b; }
+  .chevalet .allerg { font-size: .72rem; color: #5b6b75; margin: 6px 0 0; }
+
+  @media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: #fff; }
+    .outil > :not(.planche) { display: none !important; }
+    .outil { padding: 0; max-width: none; }
+    .planche { grid-template-columns: 1fr 1fr; gap: 8mm; margin: 0; }
+    .chevalet { height: 132mm; justify-content: center; border: 1px dashed #999; border-radius: 0; break-inside: avoid; }
+    .chevalet svg { width: 70mm; height: 70mm; }
+    .chevalet .resto { font-size: 18pt; }
+  }
+</style>
+</head>
+<body>
+<main class="outil">
+  <h1>Chevalets QR de table</h1>
+  <p class="aide">Outil interne Polyglotte : générez les QR codes du menu d’un restaurant puis imprimez-les (4 par page A4, à découper et glisser dans des chevalets A6).</p>
+
+  <form id="form">
+    <label>Identifiant du menu (slug)
+      <input id="slug" name="slug" required pattern="[a-z0-9\-]{1,60}" value="demo" autocomplete="off">
+    </label>
+    <label>Nom affiché
+      <input id="resto" name="resto" value="Bistrot Polyglotte">
+    </label>
+    <label class="large">Adresse publique du site (laisser vide pour utiliser l’adresse actuelle)
+      <input id="base" name="base" type="url" placeholder="https://exemple.fr/">
+    </label>
+    <label>Table de départ (facultatif)
+      <input id="table" name="table" type="number" min="1" max="999" placeholder="ex. 1">
+    </label>
+    <label>Nombre de chevalets
+      <input id="nombre" name="nombre" type="number" min="1" max="40" value="4">
+    </label>
+    <div class="actions large">
+      <button type="submit">Générer</button>
+      <button type="button" class="secondaire" id="imprimer">Imprimer</button>
+    </div>
+  </form>
+  <p class="url" id="url"></p>
+
+  <div class="planche" id="planche" aria-live="polite"></div>
+</main>
+
+<script src="../assets/vendor/qrcode.js"></script>
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("form");
+  var planche = document.getElementById("planche");
+
+  function baseParDefaut() {
+    return location.href.replace(/menu\/qr\.html.*$/, "");
+  }
+
+  function qrSvg(texte) {
+    var qr = qrcode(0, "M");
+    qr.addData(texte);
+    qr.make();
+    return qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+  }
+
+  function generer() {
+    var slug = form.slug.value.trim().toLowerCase();
+    if (!/^[a-z0-9-]{1,60}$/.test(slug)) { form.slug.reportValidity(); return; }
+    var base = (form.base.value.trim() || baseParDefaut()).replace(/\/?$/, "/");
+    var url = base + "menu/?r=" + encodeURIComponent(slug);
+    var nombre = Math.min(40, Math.max(1, parseInt(form.nombre.value, 10) || 4));
+    var table = parseInt(form.table.value, 10);
+    document.getElementById("url").textContent = "Lien encodé : " + url;
+
+    planche.textContent = "";
+    for (var i = 0; i < nombre; i++) {
+      var carte = document.createElement("div");
+      carte.className = "chevalet";
+      var h = document.createElement("p");
+      h.className = "resto";
+      h.textContent = form.resto.value.trim() || slug;
+      var langs = document.createElement("p");
+      langs.className = "langs";
+      langs.textContent = "Menu · Menu · Speisekarte · Menù · Carta";
+      var zone = document.createElement("div");
+      zone.innerHTML = qrSvg(url);
+      var svg = zone.firstElementChild;
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", "QR code vers " + url);
+      var scan = document.createElement("p");
+      scan.className = "scan";
+      scan.innerHTML = "Scannez · <span>Scan me</span> · Scannen";
+      var allerg = document.createElement("p");
+      allerg.className = "allerg";
+      allerg.textContent = "Allergènes · Allergens · Allergene" + (isNaN(table) ? "" : " — Table " + (table + i));
+      carte.append(h, langs, svg, scan, allerg);
+      planche.appendChild(carte);
+    }
+  }
+
+  form.addEventListener("submit", function (e) { e.preventDefault(); generer(); });
+  document.getElementById("imprimer").addEventListener("click", function () { generer(); window.print(); });
+
+  var p = new URLSearchParams(location.search);
+  if (p.get("r")) form.slug.value = p.get("r");
+  if (p.get("nom")) form.resto.value = p.get("nom");
+  generer();
+})();
+</script>
+</body>
+</html>

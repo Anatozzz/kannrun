@@ -1,0 +1,4 @@
+# Outils IA Polyglotte (Python 3.10+)
+anthropic>=1.0,<2
+# Tests uniquement (facultatif : les tests tournent aussi avec unittest)
+pytest>=8

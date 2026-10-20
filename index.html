@@ -1,310 +1,569 @@
 <!doctype html>
-<!-- Retirer l'attribut data-dev de <html> avant publication : il affiche les repères "À fournir". -->
-<html lang="fr" data-dev>
+<html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>kannrunn — Association de running à Annecy</title>
-<meta name="description" content="kannrunn, association de running d’étudiants à Annecy, créée par Anatole, Nada, Khamzat et Nathan. Rejoins le collectif et viens courir avec nous.">
-<meta name="theme-color" content="#3F0591">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kannrunn — Association de running">
-<meta property="og:description" content="On court. On se retrouve. On avance. Association de running créée par Anatole, Nada, Khamzat et Nathan.">
-<meta property="og:image" content="assets/og.jpg"><!-- remplacer par l'URL absolue une fois le site en ligne -->
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="stylesheet" href="style.css">
-<script>document.documentElement.classList.add("js")</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polyglotte, restaurants multilingues à Annecy</title>
+  <meta name="description" content="Polyglotte s'occupe à votre place de vos avis Google, de votre menu QR en 5 langues et de vos allergènes. Un service local à Annecy, audit gratuit remis en main propre sous 48 h.">
+  <meta name="theme-color" content="#0b2f45">
+  <script>document.documentElement.classList.add("js");</script>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Polyglotte">
+  <meta property="og:title" content="Polyglotte : votre restaurant parle la langue de chaque client">
+  <meta property="og:description" content="Avis Google, menu QR multilingue et allergènes, faits à votre place par une équipe d'Annecy. Audit gratuit sous 48 h.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M12 6h40a8 8 0 0 1 8 8v26a8 8 0 0 1-8 8H30L16 59V48h-4a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8z' fill='%2313506f'/%3E%3Ccircle cx='48' cy='14' r='5' fill='%23e8743b'/%3E%3Ctext x='31' y='38' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23fbf7f0' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<a class="skip" href="#collectif">Aller au contenu</a>
+  <a class="skip" href="#contenu">Aller au contenu</a>
 
-<header class="nav" id="nav">
-  <div class="progress" id="progress" aria-hidden="true"></div>
-  <div class="nav-in">
-    <a class="brand" href="#top" aria-label="kannrunn, retour en haut"><img class="logo" src="assets/logo-kr.png" alt="" width="44" height="44" onerror="this.remove()"><span>kannrunn<span class="brand-dot" aria-hidden="true">.</span></span></a>
-    <nav aria-label="Navigation principale">
-      <ul>
-        <li><a href="#collectif">Le collectif</a></li>
-        <li><a href="#sorties">Les sorties</a></li>
-        <li><a href="#equipe">L’équipe</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="btn btn-rose" href="#rejoindre">Nous rejoindre</a></li>
-      </ul>
-    </nav>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="wrap site-header__in">
+      <a class="logo" href="#top" aria-label="Polyglotte, retour en haut de page">
+        <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M12 6h40a8 8 0 0 1 8 8v26a8 8 0 0 1-8 8H30L16 59V48h-4a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8z" fill="currentColor"/>
+          <circle cx="48" cy="14" r="5" fill="var(--couchant)"/>
+          <text x="31" y="38" font-family="Georgia, serif" font-size="30" font-weight="700" fill="var(--bg)" text-anchor="middle">P</text>
+        </svg>
+        <span class="logo__txt">Polyglotte</span>
+      </a>
 
-<div class="menu-mobile" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
-  <button class="fermer" id="fermer">Fermer</button>
-  <a href="#collectif">Le collectif</a>
-  <a href="#sorties">Les sorties</a>
-  <a href="#equipe">L’équipe</a>
-  <a href="#contact">Contact</a>
-  <a class="btn btn-rose" href="#rejoindre" style="font:600 1rem var(--f-texte);align-self:flex-start">Nous rejoindre</a>
-</div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-principale">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
 
-<main id="top">
-
-<section class="section violet hero" aria-labelledby="titre-hero">
-  <div class="running-lanes" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-  <div class="hero-photo" data-manque="vidéo de running (assets/video/) ou photo (assets/photos/hero.jpg)">
-    <img src="assets/photos/hero.jpg" alt="" width="1600" height="1000" fetchpriority="high" onerror="this.remove()">
-    <video id="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-  </div>
-  <svg class="trace" viewBox="0 0 480 200" aria-hidden="true" focusable="false"><path d="M8 180C80 180 90 60 170 90S260 170 330 60 420 20 468 70" pathLength="1" fill="none" stroke="#F88FD0" stroke-width="4" stroke-linecap="round"/><circle cx="468" cy="70" r="9" fill="#F88FD0"/></svg>
-  <button class="pause" id="pause" hidden aria-label="Mettre la vidéo en pause">Pause</button>
-  <img class="motif motif-anim" src="assets/logo-kr.png" alt="" aria-hidden="true" onerror="this.remove()">
-  <div class="wrap">
-    <p class="lieu"><span class="point" aria-hidden="true"></span>Association de running d’étudiants, à Annecy</p>
-    <h1 id="titre-hero"><span>On court.</span> <span>On se retrouve.</span> <span>On avance.</span></h1>
-    <p>kannrunn, l’association de running créée par Anatole, Nada, Khamzat et Nathan. Un collectif d’étudiants qui court à Annecy. Rejoins-nous.</p>
-    <div class="actions">
-      <a class="btn btn-rose" href="#rejoindre">Rejoindre le groupe</a>
-      <a class="btn btn-ligne" href="#collectif">Découvrir le collectif</a>
+      <nav class="nav" id="nav-principale" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="#probleme">Le constat</a></li>
+          <li><a href="#methode">Comment ça marche</a></li>
+          <li><a href="#demo">Démo</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="#faq">Questions</a></li>
+          <li class="nav__cta"><a class="btn btn--accent btn--sm" href="#audit">Audit gratuit</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="hero-bottom"><a class="defiler" href="#collectif" aria-label="Faire défiler vers le collectif">Découvrir <span aria-hidden="true">↓</span></a><span>Du lien. Du mouvement. Ensemble.</span></div>
-  </div>
-</section>
+  </header>
 
-<section class="section clair collectif" id="collectif" aria-labelledby="titre-collectif">
-  <div class="wrap">
-    <p class="eyebrow"><span>01 / Le collectif</span><span>Le plaisir avant le chrono</span></p>
-    <div class="duo">
-      <h2 id="titre-collectif" class="reveal">Quatre personnes. Une envie : courir ensemble.</h2>
-      <div class="reveal" style="--i:1">
-        <p class="chapeau">kannrunn est une association de running fondée par Anatole, Nada, Khamzat et Nathan.</p>
-        <p>On court pour le bien-être, et pour des causes qui nous tiennent à cœur.</p>
-        <p id="presentation" hidden></p>
-      </div>
-    </div>
-    <ul class="piliers">
-      <li class="reveal"><strong>Partager</strong>Faire de la course un moment collectif.</li>
-      <li class="reveal" style="--i:1"><strong>Progresser</strong>Avancer avec une dynamique de groupe.</li>
-      <li class="reveal" style="--i:2"><strong>Se retrouver</strong>Créer du lien autour d’une pratique commune.</li>
-    </ul>
-    <figure class="photo reveal" data-manque="photo de groupe (assets/photos/groupe.jpg)">
-      <img src="assets/photos/groupe.jpg" alt="Le groupe kannrunn réuni avant une sortie" width="1600" height="1200" loading="lazy" onerror="this.remove()">
-    </figure>
-  </div>
-</section>
-
-<section class="section violet local" id="annecy" aria-labelledby="titre-local">
-  <img class="motif" src="assets/logo-kr.png" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()">
-  <div class="wrap">
-    <p class="eyebrow">Notre terrain de jeu</p>
-    <h2 id="titre-local" class="reveal">Annecy, on y court.</h2>
-    <p class="chapeau reveal" style="--i:1">Un collectif d’étudiants, un terrain de jeu local. Pas besoin d’aller loin pour se retrouver.</p>
-  </div>
-</section>
-
-<section class="section clair sorties" id="sorties" aria-labelledby="titre-sorties">
-  <div class="wrap">
-    <p class="eyebrow"><span>02 / Les sorties</span><span>On se retrouve dehors</span></p>
-    <h2 id="titre-sorties" class="reveal">Le prochain départ, c’est ensemble.</h2>
-    <ul class="liste-sorties" id="liste-sorties" hidden></ul>
-    <div class="vide reveal" id="sorties-vide">
-      <p>Les prochaines sorties seront annoncées ici. Contactez-nous pour en savoir plus.</p>
-    </div>
-    <div class="actions">
-      <a class="btn btn-violet" href="#contact">Nous contacter</a>
-      <a class="btn btn-ligne" id="insta-sorties" href="#" target="_blank" rel="noopener" hidden>Suivre sur Instagram</a>
-    </div>
-  </div>
-</section>
-
-<section class="section rose sur-clair rejoindre" id="rejoindre" aria-labelledby="titre-rejoindre">
-  <div class="wrap">
-    <p class="eyebrow">Le collectif commence avec toi</p>
-    <h2 id="titre-rejoindre" class="reveal">Rejoins kannrunn.</h2>
-    <p class="chapeau reveal" style="--i:1">Envie de courir à Annecy avec nous ?</p>
-    <p class="reveal" id="wa-note" hidden>Le plus simple : rejoindre notre groupe WhatsApp.</p>
-    <div class="actions">
-      <a class="btn btn-violet" id="lien-wa" href="#" target="_blank" rel="noopener" hidden>Rejoindre le groupe WhatsApp</a>
-      <a class="btn btn-ligne" href="#contact">Nous écrire</a>
-    </div>
-  </div>
-</section>
-
-<section class="section clair equipe" id="equipe" aria-labelledby="titre-equipe">
-  <div class="wrap">
-    <p class="eyebrow"><span>03 / L’équipe</span><span>À l’origine de kannrunn</span></p>
-    <h2 id="titre-equipe" class="reveal">Quatre élans.<br>Un même collectif.</h2>
-    <ul id="liste-equipe">
-      <li class="reveal"><figure class="photo" data-manque="photo d’Anatole"></figure><h3>Anatole</h3><p class="bio" hidden></p></li>
-      <li class="reveal" style="--i:1"><figure class="photo" data-manque="photo de Nada"></figure><h3>Nada</h3><p class="bio" hidden></p></li>
-      <li class="reveal" style="--i:2"><figure class="photo" data-manque="photo de Khamzat"></figure><h3>Khamzat</h3><p class="bio" hidden></p></li>
-      <li class="reveal" style="--i:3"><figure class="photo" data-manque="photo de Nathan"></figure><h3>Nathan</h3><p class="bio" hidden></p></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section violet identite" id="identite" aria-labelledby="titre-identite">
-  <div class="wrap">
-    <h2 id="titre-identite" class="reveal">L’univers kannrunn</h2>
-    <div class="lookbook">
-      <img class="logo-grand reveal" src="assets/logo-kr.png" alt="Monogramme kr, rose sur fond violet" loading="lazy" width="256" height="256" onerror="this.remove()">
-      <div class="reveal" style="--i:1">
-        <div class="teintes" role="list" aria-label="Couleurs de la marque">
-          <div class="teinte v" role="listitem">Violet</div>
-          <div class="teinte r" role="listitem">Rose</div>
-          <div class="teinte b" role="listitem">Blanc</div>
+  <main id="contenu">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-titre">
+      <div class="wrap hero__in">
+        <div class="hero__txt">
+          <p class="eyebrow eyebrow--clair">Pour les restaurants indépendants d'Annecy</p>
+          <h1 id="hero-titre" class="hero__titre">Votre restaurant parle la langue de <em>chaque client</em>.</h1>
+          <p class="hero__lead">Avis Google, menu en 5 langues, allergènes&nbsp;: une personne d'Annecy, aidée par l'IA, s'en occupe <strong>à votre place</strong>. Vous gardez la main, vous validez si vous le souhaitez, et vous n'avez aucun logiciel à apprendre.</p>
+          <div class="hero__actions">
+            <a class="btn btn--accent btn--lg" href="#audit">Recevoir mon audit gratuit</a>
+            <a class="btn btn--ghost-clair btn--lg" href="menu/?r=demo">Voir un menu de démonstration</a>
+          </div>
+          <p class="hero__note">Audit imprimé, remis en main propre sous 48&nbsp;h. Gratuit et sans engagement.</p>
         </div>
-        <p class="concept" id="concept-tenues" hidden>Concepts de collection : ces tenues ne sont pas encore disponibles.</p>
+
+        <div class="hero__art" aria-hidden="true">
+          <svg class="hero__paysage" viewBox="0 0 520 300" preserveAspectRatio="xMidYMax meet" focusable="false">
+            <defs>
+              <linearGradient id="g-ciel" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e8743b" stop-opacity="0"/>
+                <stop offset=".55" stop-color="#e8743b" stop-opacity=".08"/>
+                <stop offset="1" stop-color="#e8743b" stop-opacity=".4"/>
+              </linearGradient>
+              <linearGradient id="g-lac" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2bb3a3" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#0b2f45" stop-opacity=".9"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="520" height="214" fill="url(#g-ciel)"/>
+            <circle cx="360" cy="150" r="58" fill="#e8743b" opacity=".9"/>
+            <path d="M0 205 L70 140 L110 168 L170 92 L215 140 L250 118 L310 180 L360 128 L410 160 L455 110 L520 170 L520 210 L0 210Z" fill="#13506f"/>
+            <path d="M0 210 L60 172 L120 196 L190 150 L250 192 L330 160 L400 196 L470 166 L520 190 L520 214 L0 214Z" fill="#0b2f45"/>
+            <rect x="0" y="212" width="520" height="88" fill="url(#g-lac)"/>
+            <g stroke="#fbf7f0" stroke-linecap="round" opacity=".55" fill="none" stroke-width="2">
+              <path d="M300 228 h120"/>
+              <path d="M325 244 h70"/>
+              <path d="M342 258 h36"/>
+              <path d="M40 236 h60"/>
+              <path d="M150 262 h90"/>
+            </g>
+          </svg>
+          <span class="bulle bulle--1" lang="en">Hello!</span>
+          <span class="bulle bulle--2" lang="de">Guten Tag!</span>
+          <span class="bulle bulle--3" lang="it">Buongiorno!</span>
+          <span class="bulle bulle--4" lang="es">¡Hola!</span>
+          <span class="bulle bulle--5">Bonjour&nbsp;!</span>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section clair contact" id="contact" aria-labelledby="titre-contact">
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">04 / On en parle ?</p>
-      <h2 id="titre-contact" class="reveal">Envie de courir avec nous ?</h2>
-      <p class="chapeau reveal" style="--i:1">Une question sur le collectif ou les prochaines sorties ? Écrivez-nous.</p>
-      <div class="liens">
-        <a class="btn btn-violet" id="lien-mail" href="#" hidden>Envoyer un e-mail</a>
-        <a class="btn btn-ligne" id="lien-insta" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
+    <!-- CHIFFRES SOURCÉS -->
+    <section class="chiffres" aria-label="Quelques chiffres sourcés">
+      <div class="wrap">
+        <ul class="chiffres__list">
+          <li>
+            <span class="chiffres__val">44&nbsp;%</span>
+            <span class="chiffres__lib">de clientèle étrangère à Annecy, été 2025</span>
+            <a class="chiffres__src" href="https://www.sources-lac-annecy.com/app/uploads/2026/06/synthese-sources-du-lac-e25.pdf" rel="noopener">Source&nbsp;: Sources du Lac</a>
+          </li>
+          <li>
+            <span class="chiffres__val">2,5 à 3&nbsp;M</span>
+            <span class="chiffres__lib">de visiteurs par an</span>
+            <a class="chiffres__src" href="https://www.tourmag.com/Annecy-derriere-la-carte-postale-l-ombre-du-surtourisme_a123626.html" rel="noopener">Source&nbsp;: TourMag</a>
+          </li>
+          <li>
+            <span class="chiffres__val">40&nbsp;% / 19&nbsp;%</span>
+            <span class="chiffres__lib">des TPE-PME utilisent l'IA, mais seules 19&nbsp;% paient un outil</span>
+            <a class="chiffres__src" href="https://www.entreprises.gouv.fr/espace-presse/barometre-france-num-2026-quatre-tpe-pme-sur-dix-utilisent-desormais-lintelligence" rel="noopener">Source&nbsp;: baromètre France Num 2026</a>
+          </li>
+        </ul>
       </div>
-      <p id="contact-dev" data-dev-only hidden>Les coordonnées du collectif seront bientôt disponibles ici.</p>
+    </section>
+
+    <!-- LE PROBLÈME -->
+    <section class="section" id="probleme" aria-labelledby="probleme-titre">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Le constat</p>
+          <h2 id="probleme-titre">Vos clients étrangers vous parlent. Qui leur répond&nbsp;?</h2>
+          <p class="section__lead">En pleine saison, personne n'a le temps de répondre en allemand à un avis Google ou de traduire la carte du jour. Ce sont pourtant les premières choses qu'un visiteur regarde avant de pousser votre porte.</p>
+        </div>
+
+        <div class="cartes-pb">
+          <article class="carte-pb">
+            <div class="carte-pb__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Des avis en langue étrangère restés sans réponse</h3>
+            <p>Un avis en anglais, en allemand ou en italien sans réponse donne l'image d'un établissement qui ne s'adresse pas à ces clients. Les futurs visiteurs lisent les réponses autant que les avis.</p>
+          </article>
+          <article class="carte-pb">
+            <div class="carte-pb__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Un menu que tous ne peuvent pas lire</h3>
+            <p>Quand près d'un client sur deux vient de l'étranger, une carte uniquement en français, c'est du temps perdu en salle, des hésitations et des plats qu'on ne commande pas.</p>
+          </article>
+          <article class="carte-pb">
+            <div class="carte-pb__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v5M12 16v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Des allergènes à afficher, dans une langue comprise</h3>
+            <p>Les 14 allergènes réglementaires doivent être portés à la connaissance du client (règlement européen n°&nbsp;1169/2011). Un touriste allergique doit pouvoir les lire sans avoir à demander.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section class="section section--sable" id="methode" aria-labelledby="methode-titre">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Comment ça marche</p>
+          <h2 id="methode-titre">Trois étapes, et vous n'ouvrez aucun logiciel</h2>
+        </div>
+
+        <div class="methode">
+          <ol class="etapes">
+            <li class="etape">
+              <span class="etape__num" aria-hidden="true">1</span>
+              <div>
+                <h3>L'audit gratuit</h3>
+                <p>On analyse votre présence en ligne et on vous remet un audit <strong>imprimé, en main propre, sous 48&nbsp;h</strong>. Vous voyez noir sur blanc ce qui manque, sans jargon.</p>
+              </div>
+            </li>
+            <li class="etape">
+              <span class="etape__num" aria-hidden="true">2</span>
+              <div>
+                <h3>Le démarrage</h3>
+                <p>Si vous le souhaitez, on remet tout d'aplomb&nbsp;: fiche Google, menu QR en 5 langues avec allergènes, réponses à vos 30 derniers avis, chevalets pour vos tables.</p>
+              </div>
+            </li>
+            <li class="etape">
+              <span class="etape__num" aria-hidden="true">3</span>
+              <div>
+                <h3>La sérénité</h3>
+                <p>Ensuite, on suit au fil de l'eau&nbsp;: chaque nouvel avis reçoit une réponse sous 48&nbsp;h dans la langue du client, et votre carte reste à jour. Un rapport simple chaque mois.</p>
+              </div>
+            </li>
+          </ol>
+
+          <aside class="audit-feuille" aria-label="Ce que contient l'audit">
+            <p class="audit-feuille__tag">Votre audit, sur papier</p>
+            <ul class="audit-feuille__list">
+              <li><span class="coche" aria-hidden="true"></span>Avis Google sans réponse</li>
+              <li><span class="coche" aria-hidden="true"></span>Avis rédigés dans une langue étrangère</li>
+              <li><span class="coche" aria-hidden="true"></span>État de votre fiche Google (horaires, catégories, photos)</li>
+              <li><span class="coche" aria-hidden="true"></span>Menu traduit ou non</li>
+              <li><span class="coche" aria-hidden="true"></span>Affichage des allergènes</li>
+            </ul>
+            <p class="audit-feuille__pied">Remis en main propre, sous 48&nbsp;h, sans engagement.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE VS LOGICIEL -->
+    <section class="section" id="difference" aria-labelledby="diff-titre">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">La différence</p>
+          <h2 id="diff-titre">Le résultat, sans le logiciel de plus</h2>
+          <p class="section__lead">Il existe de très bons logiciels de gestion des avis et de la visibilité. Ils conviennent à ceux qui ont le temps de s'en servir chaque semaine. Polyglotte s'adresse aux restaurateurs qui préfèrent qu'on le fasse pour eux.</p>
+        </div>
+
+        <div class="compare">
+          <div class="compare__col">
+            <h3 class="compare__titre">Un logiciel en ligne</h3>
+            <dl class="compare__list">
+              <div><dt>Qui fait le travail&nbsp;?</dt><dd>Vous, depuis une interface à prendre en main</dd></div>
+              <div><dt>Réponses aux avis</dt><dd>Suggestions automatiques à relire et publier vous-même</dd></div>
+              <div><dt>Menu et allergènes</dt><dd>Selon l'outil, parfois dans un module séparé</dd></div>
+              <div><dt>Interlocuteur</dt><dd>Support en ligne</dd></div>
+            </dl>
+          </div>
+          <div class="compare__col compare__col--nous">
+            <h3 class="compare__titre">Polyglotte</h3>
+            <dl class="compare__list">
+              <div><dt>Qui fait le travail&nbsp;?</dt><dd>Nous, à votre place&nbsp;: vous validez si vous le souhaitez</dd></div>
+              <div><dt>Réponses aux avis</dt><dd>Rédigées dans la langue de chaque client, relues par une personne</dd></div>
+              <div><dt>Menu et allergènes</dt><dd>Menu QR en 5 langues avec les 14 allergènes, inclus</dd></div>
+              <div><dt>Interlocuteur</dt><dd>Une personne d'Annecy, que vous voyez en vrai</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÉMO MENU -->
+    <section class="section section--lac" id="demo" aria-labelledby="demo-titre">
+      <div class="wrap demo">
+        <div class="demo__txt">
+          <p class="eyebrow eyebrow--clair">Aperçu</p>
+          <h2 id="demo-titre">Un menu QR que chaque client lit dans sa langue</h2>
+          <p>Le client scanne le chevalet posé sur la table, choisit sa langue, et voit vos plats, vos prix et les allergènes. Pas d'application à installer.</p>
+          <ul class="demo__points">
+            <li>Français, anglais, allemand, italien, espagnol</li>
+            <li>Les 14 allergènes réglementaires, plat par plat</li>
+            <li>Mises à jour illimitées avec l'abonnement Sérénité</li>
+          </ul>
+          <p class="demo__essai">Essayez&nbsp;: changez la langue du menu.</p>
+          <a class="btn btn--accent" href="menu/?r=demo">Voir un menu de démonstration</a>
+        </div>
+
+        <figure class="demo__fig">
+          <div class="phone">
+            <div class="phone__ecran" id="demo-menu" lang="fr">
+              <div class="pm-top" aria-hidden="true"><span class="pm-encoche"></span></div>
+              <div class="pm-head">
+                <p class="pm-resto">Restaurant démo</p>
+                <p class="pm-sub" data-i18n="sub">Annecy · La carte</p>
+              </div>
+              <div class="pm-langs" role="group" aria-label="Langue du menu de démonstration">
+                <button type="button" class="pm-lang" data-lang="fr" aria-pressed="true">FR<span class="sr-only"> (français)</span></button>
+                <button type="button" class="pm-lang" data-lang="en" aria-pressed="false">EN<span class="sr-only"> (anglais)</span></button>
+                <button type="button" class="pm-lang" data-lang="de" aria-pressed="false">DE<span class="sr-only"> (allemand)</span></button>
+                <button type="button" class="pm-lang" data-lang="it" aria-pressed="false">IT<span class="sr-only"> (italien)</span></button>
+                <button type="button" class="pm-lang" data-lang="es" aria-pressed="false">ES<span class="sr-only"> (espagnol)</span></button>
+              </div>
+              <p class="pm-titre" data-i18n="title">Nos plats</p>
+              <ul class="pm-plats" id="demo-plats" aria-live="polite">
+                <li class="pm-plat">
+                  <div class="pm-plat__l1"><span class="pm-plat__nom">Tartiflette au reblochon</span><span class="pm-plat__prix">19,50&nbsp;€</span></div>
+                  <p class="pm-plat__desc">Pommes de terre, lardons, oignons et reblochon de Savoie fondu.</p>
+                  <p class="pm-all"><span class="pm-all__lib">Allergènes&nbsp;:</span> <span class="pm-chip">Lait</span></p>
+                </li>
+                <li class="pm-plat">
+                  <div class="pm-plat__l1"><span class="pm-plat__nom">Filets de perche, sauce meunière</span><span class="pm-plat__prix">24&nbsp;€</span></div>
+                  <p class="pm-plat__desc">Filets de perche poêlés au beurre, pommes vapeur.</p>
+                  <p class="pm-all"><span class="pm-all__lib">Allergènes&nbsp;:</span> <span class="pm-chip">Poisson</span> <span class="pm-chip">Lait</span> <span class="pm-chip">Gluten</span></p>
+                </li>
+                <li class="pm-plat">
+                  <div class="pm-plat__l1"><span class="pm-plat__nom">Tarte aux myrtilles</span><span class="pm-plat__prix">8,50&nbsp;€</span></div>
+                  <p class="pm-plat__desc">Pâte sablée maison et myrtilles de montagne.</p>
+                  <p class="pm-all"><span class="pm-all__lib">Allergènes&nbsp;:</span> <span class="pm-chip">Gluten</span> <span class="pm-chip">Œufs</span> <span class="pm-chip">Lait</span></p>
+                </li>
+              </ul>
+              <p class="pm-note" data-i18n="note">En cas d'allergie, demandez conseil à notre équipe.</p>
+            </div>
+          </div>
+          <figcaption class="demo__legende">Maquette d'un restaurant fictif&nbsp;: plats et prix donnés à titre d'exemple.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TARIFS -->
+    <section class="section" id="tarifs" aria-labelledby="tarifs-titre">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Tarifs</p>
+          <h2 id="tarifs-titre">Des prix clairs, sans surprise</h2>
+          <p class="section__lead">Prix nets. TVA non applicable, art. 293&nbsp;B du CGI.</p>
+        </div>
+
+        <div class="tarifs">
+          <article class="tarif" aria-labelledby="t-audit">
+            <h3 id="t-audit" class="tarif__nom">Audit</h3>
+            <p class="tarif__prix"><span class="tarif__montant">Gratuit</span></p>
+            <p class="tarif__desc">Pour savoir où vous en êtes, sans engagement.</p>
+            <ul class="tarif__list">
+              <li>Avis Google sans réponse</li>
+              <li>Avis en langue étrangère</li>
+              <li>État de votre fiche Google</li>
+              <li>Menu traduit ou non, allergènes</li>
+              <li>Imprimé et remis en main propre sous 48&nbsp;h</li>
+            </ul>
+            <a class="btn btn--contour" href="#audit">Recevoir mon audit gratuit</a>
+          </article>
+
+          <article class="tarif tarif--vedette" aria-labelledby="t-demarrage">
+            <p class="tarif__badge">Offre fondateurs</p>
+            <h3 id="t-demarrage" class="tarif__nom">Pack Démarrage</h3>
+            <p class="tarif__prix">
+              <span class="tarif__montant">290&nbsp;€</span>
+              <span class="tarif__periode">paiement unique</span>
+            </p>
+            <p class="tarif__fondateur"><strong>145&nbsp;€</strong> pour les 10 premiers restaurants d'Annecy</p>
+            <ul class="tarif__list">
+              <li>Fiche Google optimisée&nbsp;: horaires, catégories, attributs, photos</li>
+              <li>Menu QR en français, anglais, allemand, italien et espagnol</li>
+              <li>Les 14 allergènes réglementaires, plat par plat</li>
+              <li>Réponse à vos 30 derniers avis, dans la langue de chaque client</li>
+              <li>10 chevalets QR imprimés pour vos tables</li>
+            </ul>
+            <a class="btn btn--accent" href="#audit">Commencer par l'audit</a>
+          </article>
+
+          <article class="tarif" aria-labelledby="t-serenite">
+            <h3 id="t-serenite" class="tarif__nom">Abonnement Sérénité</h3>
+            <p class="tarif__prix">
+              <span class="tarif__montant">59&nbsp;€</span>
+              <span class="tarif__periode">par mois, sans engagement</span>
+            </p>
+            <p class="tarif__alt">ou <strong>590&nbsp;€ par an</strong>, soit 2 mois offerts</p>
+            <ul class="tarif__list">
+              <li>Réponse à chaque nouvel avis sous 48&nbsp;h, dans la langue du client</li>
+              <li>Mises à jour du menu illimitées</li>
+              <li>4 publications Google par mois</li>
+              <li>Un rapport mensuel simple</li>
+            </ul>
+            <a class="btn btn--contour" href="#audit">En parler lors de l'audit</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFRE FONDATEURS + POURQUOI MAINTENANT -->
+    <section class="section section--sable" id="fondateurs" aria-labelledby="fond-titre">
+      <div class="wrap fondateurs">
+        <div class="fondateurs__carte">
+          <p class="eyebrow">Offre fondateurs</p>
+          <h2 id="fond-titre">Les 10 premiers restaurants d'Annecy&nbsp;: Pack Démarrage à <span class="prix-barre"><s>290&nbsp;€</s></span> 145&nbsp;€</h2>
+          <p>Polyglotte démarre à Annecy cet automne. Pour les dix premiers restaurants qui nous rejoignent, le Pack Démarrage est à moitié prix&nbsp;: même contenu, 145&nbsp;€ au lieu de 290&nbsp;€.</p>
+          <a class="btn btn--accent" href="#audit">Recevoir mon audit gratuit</a>
+        </div>
+        <div class="fondateurs__saison">
+          <h3>Pourquoi maintenant&nbsp;?</h3>
+          <p>D'octobre à mars, la salle est plus calme. C'est le bon moment pour préparer la saison&nbsp;: fiche Google à jour, carte traduite, avis en retard rattrapés. En juillet, il sera trop tard pour s'en occuper.</p>
+          <ol class="saison" aria-label="Calendrier conseillé">
+            <li><span class="saison__mois">Oct.–déc.</span> Audit et démarrage</li>
+            <li><span class="saison__mois">Janv.–mars</span> Avis rattrapés, carte prête</li>
+            <li><span class="saison__mois">Été</span> Vous servez, on répond</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARTE -->
+    <section class="section" id="charte" aria-labelledby="charte-titre">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">Notre charte</p>
+          <h2 id="charte-titre">Des avis vrais, des réponses sincères</h2>
+          <p class="section__lead">Votre réputation est précieuse. On la soigne sans jamais tricher.</p>
+        </div>
+        <ul class="charte">
+          <li class="charte__item">
+            <h3>Jamais de faux avis</h3>
+            <p>On ne rédige jamais de faux avis et on n'en achète jamais. C'est une pratique commerciale trompeuse, interdite par la loi, et elle finit toujours par se voir.</p>
+          </li>
+          <li class="charte__item">
+            <h3>Uniquement les avis réels</h3>
+            <p>On répond seulement aux avis laissés par vos vrais clients. Chaque réponse peut être validée par vous avant publication.</p>
+          </li>
+          <li class="charte__item">
+            <h3>Un accès que vous contrôlez</h3>
+            <p>Vous nous ajoutez comme «&nbsp;gestionnaire&nbsp;» de votre fiche Google. Vous restez propriétaire et pouvez retirer cet accès à tout moment.</p>
+          </li>
+          <li class="charte__item">
+            <h3>Aucune donnée revendue</h3>
+            <p>Les informations sur votre établissement et vos clients ne servent qu'à faire notre travail. On ne les vend ni ne les cède à personne.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--sable" id="faq" aria-labelledby="faq-titre">
+      <div class="wrap faq-wrap">
+        <div class="section__head">
+          <p class="eyebrow">Questions fréquentes</p>
+          <h2 id="faq-titre">Vos questions, nos réponses</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Faut-il vous donner mon mot de passe Google&nbsp;?</summary>
+            <div class="faq__rep">
+              <p>Non, jamais. Depuis votre fiche Google, vous nous invitez comme «&nbsp;gestionnaire&nbsp;». Vous restez le seul propriétaire de la fiche et vous pouvez retirer notre accès à tout moment. On vous montre comment faire lors du rendez-vous.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Suis-je engagé sur la durée&nbsp;?</summary>
+            <div class="faq__rep">
+              <p>L'audit est gratuit et n'engage à rien. Le Pack Démarrage est un paiement unique. L'abonnement Sérénité mensuel est sans engagement&nbsp;: vous l'arrêtez quand vous voulez. La formule annuelle (590&nbsp;€) est réglée pour 12 mois, en échange de 2 mois offerts.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Combien de temps ça me prend&nbsp;?</summary>
+            <div class="faq__rep">
+              <p>Très peu, c'est tout l'intérêt. Pour l'audit, rien&nbsp;: on vient vous le remettre. Pour le démarrage, un rendez-vous pour récupérer votre carte, vos recettes et vos allergènes, puis une relecture avant mise en ligne. Ensuite, seulement le temps de valider les réponses aux avis, si vous souhaitez les voir avant publication.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Qui répond à mes avis&nbsp;?</summary>
+            <div class="faq__rep">
+              <p>Une personne de l'équipe, à Annecy. L'IA nous aide à traduire et à rédiger dans la langue du client, mais chaque réponse est relue par un humain, dans un ton qui vous ressemble. Vous pouvez demander à valider chaque réponse avant qu'elle soit publiée.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Allergènes&nbsp;: qui est responsable des informations affichées&nbsp;?</summary>
+            <div class="faq__rep">
+              <p>Vous restez responsable des informations allergènes que vous déclarez, comme aujourd'hui avec votre carte papier. Nous les mettons en forme et les traduisons à partir de ce que vous nous transmettez, puis nous vous les faisons valider avant toute publication. Pensez à nous prévenir à chaque changement de recette ou de fournisseur&nbsp;: avec l'abonnement Sérénité, les mises à jour sont illimitées.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Et si je reçois un avis négatif&nbsp;?</summary>
+            <div class="faq__rep">
+              <p>On y répond avec calme et courtoisie, sans polémique, dans la langue du client. On ne supprime pas un avis parce qu'il déplaît. Si un avis enfreint clairement les règles de Google (insulte, contenu hors sujet, faux client), on vous aide à le signaler par la procédure officielle.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Quelles langues proposez-vous&nbsp;?</summary>
+            <div class="faq__rep">
+              <p>Le menu QR est disponible en français, anglais, allemand, italien et espagnol. Pour les avis, on répond dans la langue de chaque client. Si un avis arrive dans une langue moins courante, on vous dit franchement ce qu'on peut faire.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Je n'ai pas de site internet. Est-ce un problème&nbsp;?</summary>
+            <div class="faq__rep">
+              <p>Non. Le menu QR a sa propre page, accessible depuis vos tables et votre fiche Google. Pour beaucoup de restaurants, une fiche Google bien tenue et un menu lisible suffisent.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULAIRE AUDIT -->
+    <section class="section section--lac" id="audit" aria-labelledby="audit-titre">
+      <div class="wrap contact">
+        <div class="contact__txt">
+          <p class="eyebrow eyebrow--clair">Audit gratuit</p>
+          <h2 id="audit-titre">Recevez votre audit, imprimé, sous 48&nbsp;h</h2>
+          <p>Laissez-nous quelques informations. On analyse votre fiche Google, vos avis et votre carte, puis on vient vous remettre l'audit en main propre. C'est gratuit et vous ne vous engagez à rien.</p>
+
+          <div class="contact__direct" data-config-any="email telephone whatsapp lienRdv">
+            <p class="contact__direct-titre">Vous préférez nous parler directement&nbsp;?</p>
+            <ul class="contact__liens">
+              <li data-config-if="telephone"><a class="lien-clair" data-config="telephone" data-config-show href="#audit">Appeler</a></li>
+              <li data-config-if="whatsapp"><a class="lien-clair" data-config="whatsapp" href="#audit" rel="noopener">Écrire sur WhatsApp</a></li>
+              <li data-config-if="email"><a class="lien-clair" data-config="email" data-config-show href="#audit">Écrire un e-mail</a></li>
+              <li data-config-if="lienRdv"><a class="lien-clair" data-config="lienRdv" href="#audit" rel="noopener">Prendre rendez-vous en ligne</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contact__form">
+          <form class="form" id="form-audit" novalidate aria-describedby="form-intro">
+            <p id="form-intro" class="form__intro">Les champs marqués d'un astérisque (<span aria-hidden="true">*</span><span class="sr-only">astérisque</span>) sont obligatoires. Indiquez au moins un téléphone ou un e-mail.</p>
+
+            <div class="champ">
+              <label for="f-restaurant">Nom du restaurant <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-restaurant" name="restaurant" type="text" autocomplete="organization" required aria-describedby="e-restaurant">
+              <p class="champ__err" id="e-restaurant" hidden></p>
+            </div>
+
+            <div class="champ">
+              <label for="f-prenom">Votre prénom <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-prenom" name="prenom" type="text" autocomplete="given-name" required aria-describedby="e-prenom">
+              <p class="champ__err" id="e-prenom" hidden></p>
+            </div>
+
+            <div class="champ-duo">
+              <div class="champ">
+                <label for="f-telephone">Téléphone</label>
+                <input id="f-telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="e-telephone">
+                <p class="champ__err" id="e-telephone" hidden></p>
+              </div>
+              <div class="champ">
+                <label for="f-email">E-mail</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="e-email">
+                <p class="champ__err" id="e-email" hidden></p>
+              </div>
+            </div>
+
+            <div class="champ">
+              <label for="f-quartier">Quartier</label>
+              <select id="f-quartier" name="quartier">
+                <option value="">Choisir…</option>
+                <option>Vieille ville</option>
+                <option>Centre-ville / Courier</option>
+                <option>Bords du lac / Pâquier</option>
+                <option>Annecy-le-Vieux</option>
+                <option>Cran-Gevrier</option>
+                <option>Seynod</option>
+                <option>Meythet</option>
+                <option>Pringy</option>
+                <option>Autour du lac (autre commune)</option>
+                <option>Autre</option>
+              </select>
+            </div>
+
+            <button class="btn btn--accent btn--lg btn--plein" type="submit">Recevoir mon audit gratuit</button>
+
+            <p class="form__rgpd">Vos informations servent uniquement à vous recontacter pour l'audit. Elles ne sont ni revendues ni cédées. <a href="mentions-legales.html#confidentialite">Politique de confidentialité</a>.</p>
+
+            <div class="form__msg" id="form-msg" role="status" aria-live="polite" tabindex="-1" hidden></div>
+          </form>
+          <noscript>
+            <p class="form__noscript">Ce formulaire a besoin de JavaScript pour fonctionner. Activez-le dans votre navigateur, ou rechargez la page.</p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__in">
+      <div class="site-footer__marque">
+        <p class="logo logo--pied"><span class="logo__txt">Polyglotte</span></p>
+        <p>Avis, menus multilingues et allergènes pour les restaurants indépendants. <span data-config-text="adresse"></span>.</p>
+      </div>
+      <ul class="site-footer__liens">
+        <li data-config-if="email"><a data-config="email" data-config-show href="#audit">E-mail</a></li>
+        <li data-config-if="telephone"><a data-config="telephone" data-config-show href="#audit">Téléphone</a></li>
+        <li><a href="#audit">Audit gratuit</a></li>
+        <li><a href="mentions-legales.html">Mentions légales et confidentialité</a></li>
+      </ul>
+      <p class="site-footer__legal">© <span data-annee>2026</span> Polyglotte. TVA non applicable, art. 293&nbsp;B du CGI.</p>
     </div>
-    <form id="form" novalidate hidden>
-      <div><label for="prenom">Prénom</label><input id="prenom" name="prenom" autocomplete="given-name" required></div>
-      <div><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-      <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-      <button class="btn btn-violet" type="submit" id="envoi">Envoyer</button>
-      <p class="statut" id="statut" role="status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
+  </footer>
 
-</main>
-
-<footer>
-  <div class="wrap">
-    <div><img class="logo" src="assets/logo-kr.png" alt="" width="56" height="56" loading="lazy" onerror="this.remove()"><strong style="font:400 1.75rem var(--f-titre)">kannrunn</strong></div>
-    <ul>
-      <li><a href="#collectif">Le collectif</a></li>
-      <li><a href="#sorties">Les sorties</a></li>
-      <li><a href="#equipe">L’équipe</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li id="pied-mail" hidden></li>
-      <li id="pied-insta" hidden></li>
-      <li id="pied-wa" hidden></li>
-    </ul>
-    <div>
-      <small>Association créée par Anatole, Nada, Khamzat et Nathan.</small><br>
-      <small><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Politique de confidentialité</a></small>
-    </div>
-  </div>
-</footer>
-
-<script>
-/* ===== CONFIG : seul endroit à modifier pour les contenus. Laisser vide = élément masqué. ===== */
-const CONFIG = {
-  email: "",            // ex. "contact@..." (à confirmer)
-  instagram: "",        // URL complète du compte confirmé
-  whatsapp: "",         // lien d'invitation du groupe (https://chat.whatsapp.com/...)
-  videoDesktop: "assets/video/hero.mp4",        // paysage, 10-15 s, sans son
-  videoMobile: "assets/video/hero-mobile.mp4",  // portrait, plus léger
-  formEndpoint: "",     // URL d'un service de formulaire (ex. Formspree). Vide = pas de formulaire
-  presentation: "",     // texte de présentation précise (ville, activité...)
-  tenuesDisponiblesEnConcept: false,
-  equipe: {             // photo: "assets/photos/anatole.jpg", bio: "..."
-    Anatole: {photo:"", bio:""}, Nada: {photo:"", bio:""},
-    Khamzat: {photo:"", bio:""}, Nathan: {photo:"", bio:""}
-  },
-  sorties: []           // {date, heure, lieu, distance, allure, participation}, confirmées uniquement
-};
-
-const $ = s => document.querySelector(s);
-const show = (el, on = true) => { el.hidden = !on; };
-
-/* Contact */
-if (CONFIG.email) {
-  const a = $("#lien-mail"); a.href = "mailto:" + CONFIG.email; show(a);
-  const li = $("#pied-mail"); li.innerHTML = '<a href="mailto:' + CONFIG.email + '">' + CONFIG.email + '</a>'; show(li);
-}
-if (CONFIG.instagram) {
-  ["#lien-insta", "#insta-sorties"].forEach(s => { const a = $(s); a.href = CONFIG.instagram; show(a); });
-  const li = $("#pied-insta"); li.innerHTML = '<a href="' + CONFIG.instagram + '" target="_blank" rel="noopener">Instagram</a>'; show(li);
-}
-if (!CONFIG.email && !CONFIG.instagram && !CONFIG.formEndpoint && document.documentElement.hasAttribute("data-dev")) show($("#contact-dev"));
-if (CONFIG.presentation) { const p = $("#presentation"); p.textContent = CONFIG.presentation; show(p); }
-if (CONFIG.tenuesDisponiblesEnConcept) show($("#concept-tenues"));
-
-if (CONFIG.whatsapp) {
-  const a = $("#lien-wa"); a.href = CONFIG.whatsapp; show(a); show($("#wa-note"));
-  const li = $("#pied-wa"); li.innerHTML = '<a href="' + CONFIG.whatsapp + '" target="_blank" rel="noopener">Groupe WhatsApp</a>'; show(li);
-}
-
-/* Sorties */
-if (CONFIG.sorties.length) {
-  const ul = $("#liste-sorties");
-  const ligne = (k, v) => v ? "<dt>" + k + "</dt><dd>" + v + "</dd>" : "";
-  ul.innerHTML = CONFIG.sorties.map(s => '<li class="sortie reveal"><h3>' + s.date + (s.heure ? " · " + s.heure : "") + "</h3><dl>" +
-    ligne("Rendez-vous", s.lieu) + ligne("Distance", s.distance) + ligne("Allure", s.allure) + ligne("Participation", s.participation) + "</dl></li>").join("");
-  show(ul); show($("#sorties-vide"), false);
-}
-
-/* Équipe */
-document.querySelectorAll("#liste-equipe li").forEach(li => {
-  const d = CONFIG.equipe[li.querySelector("h3").textContent] || {};
-  if (d.photo) {
-    const fig = li.querySelector("figure"), img = new Image();
-    img.src = d.photo; img.alt = "Portrait de " + li.querySelector("h3").textContent; img.loading = "lazy";
-    fig.appendChild(img); fig.removeAttribute("data-manque");
-  }
-  if (d.bio) { const p = li.querySelector(".bio"); p.textContent = d.bio; show(p); }
-});
-
-/* Formulaire : actif uniquement si un point d'envoi réel est configuré */
-if (CONFIG.formEndpoint) {
-  const f = $("#form"), st = $("#statut"), btn = $("#envoi"); show(f);
-  f.addEventListener("submit", async e => {
-    e.preventDefault(); st.className = "statut";
-    if (!f.checkValidity()) { st.textContent = "Merci de remplir les trois champs avec une adresse e-mail valide."; st.classList.add("erreur"); return; }
-    btn.disabled = true; st.textContent = "Envoi en cours…";
-    try {
-      const r = await fetch(CONFIG.formEndpoint, {method: "POST", headers: {"Accept": "application/json", "Content-Type": "application/json"}, body: JSON.stringify(Object.fromEntries(new FormData(f)))});
-      if (!r.ok) throw 0;
-      f.reset(); st.textContent = "Message envoyé. Merci, nous vous répondons vite.";
-    } catch { st.textContent = "L’envoi a échoué. Réessayez ou écrivez-nous directement."; st.classList.add("erreur"); }
-    btn.disabled = false;
-  });
-}
-
-/* Navigation : fond au défilement + menu mobile */
-const nav = $("#nav"), menu = $("#menu"), burger = $("#burger");
-const bar = $("#progress");
-const onScroll = () => { nav.classList.toggle("solide", scrollY > 40); bar.style.transform = "scaleX(" + Math.min(1, scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight)) + ")"; };
-onScroll(); addEventListener("scroll", onScroll, {passive: true});
-const toggle = o => { menu.classList.toggle("ouvert", o); burger.setAttribute("aria-expanded", o); document.body.style.overflow = o ? "hidden" : ""; (o ? $("#fermer") : burger).focus(); };
-burger.onclick = () => toggle(true); $("#fermer").onclick = () => toggle(false);
-menu.querySelectorAll("a").forEach(a => a.onclick = () => toggle(false));
-addEventListener("keydown", e => { if (e.key === "Escape" && menu.classList.contains("ouvert")) toggle(false); });
-
-/* Vidéo d'accueil : jamais de son, ni si mouvement réduit ou économie de données ; retombe sur la photo si le fichier manque */
-const v = $("#hero-video"), pz = $("#pause");
-const src = matchMedia("(max-width:55.99rem)").matches ? CONFIG.videoMobile : CONFIG.videoDesktop;
-if (src && !matchMedia("(prefers-reduced-motion: reduce)").matches && !(navigator.connection && navigator.connection.saveData)) {
-  v.addEventListener("canplay", () => { v.classList.add("pret"); v.play().then(() => show(pz)).catch(() => {}); }, {once: true});
-  v.addEventListener("error", () => v.remove());
-  v.src = src; v.load();
-}
-pz.onclick = () => {
-  const lecture = v.paused; lecture ? v.play() : v.pause();
-  pz.textContent = lecture ? "Pause" : "Lecture";
-  pz.setAttribute("aria-label", lecture ? "Mettre la vidéo en pause" : "Relancer la vidéo");
-};
-
-/* Apparitions au défilement */
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("vu"); io.unobserve(e.target); } }), {threshold: .15});
-document.querySelectorAll(".reveal").forEach(el => io.observe(el));
-document.fonts.load('400 1em "Adumu"').then(fonts => {
-  if (fonts.length) document.documentElement.classList.add("adumu-ready");
-}).catch(() => {});
-</script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

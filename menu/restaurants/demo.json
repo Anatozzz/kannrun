@@ -1,0 +1,257 @@
+{
+  "slug": "demo",
+  "nom": "Bistrot Polyglotte",
+  "sousTitre": {
+    "fr": "Cuisine savoyarde · restaurant fictif de démonstration",
+    "en": "Savoyard cuisine · fictional demo restaurant",
+    "de": "Savoyische Küche · fiktives Demo-Restaurant",
+    "it": "Cucina savoiarda · ristorante fittizio dimostrativo",
+    "es": "Cocina saboyana · restaurante ficticio de demostración"
+  },
+  "langues": ["fr", "en", "de", "it", "es"],
+  "devise": "EUR",
+  "maj": "2026-10-20",
+  "infos": {
+    "adresse": "Annecy (adresse fictive)",
+    "telephone": "",
+    "horaires": {
+      "fr": "Mardi – samedi, 12 h – 14 h et 19 h – 22 h",
+      "en": "Tuesday – Saturday, 12 pm – 2 pm and 7 pm – 10 pm",
+      "de": "Dienstag – Samstag, 12 – 14 Uhr und 19 – 22 Uhr",
+      "it": "Martedì – sabato, 12:00 – 14:00 e 19:00 – 22:00",
+      "es": "Martes – sábado, 12:00 – 14:00 y 19:00 – 22:00"
+    },
+    "avisUrl": "",
+    "site": ""
+  },
+  "message": {
+    "fr": "Bienvenue ! Tous nos plats sont préparés sur place. Le fromage vient de fermes des Aravis.",
+    "en": "Welcome! All our dishes are prepared on site. Our cheese comes from farms in the Aravis mountains.",
+    "de": "Willkommen! Alle Gerichte werden vor Ort zubereitet. Unser Käse stammt von Bauernhöfen aus den Aravis-Bergen.",
+    "it": "Benvenuti! Tutti i nostri piatti sono preparati sul posto. Il formaggio proviene da fattorie degli Aravis.",
+    "es": "¡Bienvenidos! Todos nuestros platos se preparan aquí. El queso procede de granjas de los Aravis."
+  },
+  "sections": [
+    {
+      "id": "entrees",
+      "titre": { "fr": "Entrées", "en": "Starters", "de": "Vorspeisen", "it": "Antipasti", "es": "Entrantes" },
+      "plats": [
+        {
+          "nom": { "fr": "Salade savoyarde", "en": "Salade savoyarde", "de": "Salade savoyarde", "it": "Salade savoyarde", "es": "Salade savoyarde" },
+          "description": {
+            "fr": "Salade verte, lardons, croûtons, reblochon chaud, noix, vinaigrette à la moutarde",
+            "en": "Green salad, bacon lardons, croutons, warm Reblochon cheese, walnuts, mustard dressing",
+            "de": "Grüner Salat, Speckwürfel, Croûtons, warmer Reblochon-Käse, Walnüsse, Senf-Vinaigrette",
+            "it": "Insalata verde, pancetta a dadini, crostini, Reblochon caldo, noci, vinaigrette alla senape",
+            "es": "Ensalada verde, taquitos de beicon, picatostes, queso Reblochon caliente, nueces, vinagreta de mostaza"
+          },
+          "prix": 13,
+          "allergenes": ["gluten", "lait", "fruits-a-coque", "moutarde", "sulfites"],
+          "tags": ["local"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Velouté de courge du marché", "en": "Market squash velouté", "de": "Kürbiscremesuppe vom Markt", "it": "Vellutata di zucca del mercato", "es": "Crema de calabaza del mercado" },
+          "description": {
+            "fr": "Courge de Haute-Savoie, crème fraîche, graines de courge torréfiées",
+            "en": "Haute-Savoie squash, fresh cream, roasted pumpkin seeds",
+            "de": "Kürbis aus Hochsavoyen, Sahne, geröstete Kürbiskerne",
+            "it": "Zucca dell’Alta Savoia, panna fresca, semi di zucca tostati",
+            "es": "Calabaza de Alta Saboya, nata fresca, pipas de calabaza tostadas"
+          },
+          "prix": 9,
+          "allergenes": ["lait"],
+          "tags": ["vegetarien", "local", "fait-maison", "sans-gluten"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Planche de charcuterie et tomme de Savoie", "en": "Charcuterie and Tomme de Savoie board", "de": "Wurst- und Tomme-de-Savoie-Platte", "it": "Tagliere di salumi e Tomme de Savoie", "es": "Tabla de embutidos y Tomme de Savoie" },
+          "description": {
+            "fr": "Jambon cru de Savoie, saucisson, tomme, pain de campagne",
+            "en": "Savoy cured ham, dry sausage, Tomme cheese, country bread",
+            "de": "Savoyer Rohschinken, Salami, Tomme-Käse, Landbrot",
+            "it": "Prosciutto crudo di Savoia, salame, Tomme, pane casereccio",
+            "es": "Jamón curado de Saboya, salchichón, queso Tomme, pan de pueblo"
+          },
+          "prix": 15,
+          "allergenes": ["gluten", "lait", "sulfites"],
+          "tags": ["local"],
+          "dispo": true
+        }
+      ]
+    },
+    {
+      "id": "plats",
+      "titre": { "fr": "Plats", "en": "Main courses", "de": "Hauptgerichte", "it": "Secondi", "es": "Platos principales" },
+      "plats": [
+        {
+          "nom": { "fr": "Tartiflette", "en": "Tartiflette", "de": "Tartiflette", "it": "Tartiflette", "es": "Tartiflette" },
+          "description": {
+            "fr": "Pommes de terre, lardons, oignons, vin blanc et reblochon fermier AOP gratiné, salade verte",
+            "en": "Potatoes, bacon, onions, white wine and melted farmhouse Reblochon PDO cheese, green salad",
+            "de": "Kartoffeln, Speck, Zwiebeln, Weißwein und überbackener Bauern-Reblochon g.U., grüner Salat",
+            "it": "Patate, pancetta, cipolle, vino bianco e Reblochon fermier DOP gratinato, insalata verde",
+            "es": "Patatas, beicon, cebolla, vino blanco y queso Reblochon de granja DOP gratinado, ensalada verde"
+          },
+          "prix": 19,
+          "allergenes": ["lait", "sulfites", "moutarde"],
+          "tags": ["signature", "local"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Filets de perche meunière", "en": "Perch fillets meunière", "de": "Barschfilets nach Müllerinart", "it": "Filetti di pesce persico alla mugnaia", "es": "Filetes de perca a la molinera" },
+          "description": {
+            "fr": "Filets de perche poêlés au beurre, frites maison, sauce tartare",
+            "en": "Perch fillets pan-fried in butter, homemade fries, tartar sauce",
+            "de": "In Butter gebratene Barschfilets, hausgemachte Pommes frites, Remoulade",
+            "it": "Filetti di persico in padella al burro, patatine fatte in casa, salsa tartara",
+            "es": "Filetes de perca a la mantequilla, patatas fritas caseras, salsa tártara"
+          },
+          "prix": 26,
+          "allergenes": ["poissons", "gluten", "lait", "oeufs", "moutarde"],
+          "tags": ["fait-maison"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Fondue savoyarde", "en": "Fondue savoyarde", "de": "Fondue savoyarde", "it": "Fondue savoyarde", "es": "Fondue savoyarde" },
+          "description": {
+            "fr": "Trois fromages de Savoie fondus au vin blanc, pain de campagne. Prix par personne, 2 personnes minimum",
+            "en": "Three Savoy cheeses melted with white wine, country bread. Price per person, minimum 2 people",
+            "de": "Drei savoyische Käsesorten in Weißwein geschmolzen, Landbrot. Preis pro Person, ab 2 Personen",
+            "it": "Tre formaggi della Savoia fusi nel vino bianco, pane casereccio. Prezzo a persona, minimo 2 persone",
+            "es": "Tres quesos de Saboya fundidos con vino blanco, pan de pueblo. Precio por persona, mínimo 2 personas"
+          },
+          "prix": 24,
+          "allergenes": ["lait", "gluten", "sulfites"],
+          "tags": ["vegetarien", "signature"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Diots au vin blanc et polenta", "en": "Diots in white wine with polenta", "de": "Diots in Weißwein mit Polenta", "it": "Diots al vino bianco con polenta", "es": "Diots al vino blanco con polenta" },
+          "description": {
+            "fr": "Saucisses de Savoie mijotées au vin blanc et aux oignons, polenta crémeuse",
+            "en": "Savoy sausages slow-cooked in white wine and onions, creamy polenta",
+            "de": "Savoyer Würste in Weißwein und Zwiebeln geschmort, cremige Polenta",
+            "it": "Salsicce della Savoia stufate nel vino bianco con cipolle, polenta cremosa",
+            "es": "Salchichas de Saboya guisadas en vino blanco con cebolla, polenta cremosa"
+          },
+          "prix": 18,
+          "allergenes": ["sulfites", "lait", "celeri"],
+          "tags": ["local"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Risotto aux cèpes", "en": "Porcini mushroom risotto", "de": "Steinpilzrisotto", "it": "Risotto ai porcini", "es": "Risotto de boletus" },
+          "description": {
+            "fr": "Riz carnaroli, cèpes, bouillon de légumes, parmesan",
+            "en": "Carnaroli rice, porcini mushrooms, vegetable stock, Parmesan",
+            "de": "Carnaroli-Reis, Steinpilze, Gemüsebrühe, Parmesan",
+            "it": "Riso carnaroli, porcini, brodo vegetale, parmigiano",
+            "es": "Arroz carnaroli, boletus, caldo de verduras, parmesano"
+          },
+          "prix": 20,
+          "allergenes": ["lait", "sulfites", "celeri"],
+          "tags": ["vegetarien", "sans-gluten"],
+          "dispo": false
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "titre": { "fr": "Desserts", "en": "Desserts", "de": "Desserts", "it": "Dolci", "es": "Postres" },
+      "plats": [
+        {
+          "nom": { "fr": "Tarte aux myrtilles", "en": "Blueberry tart", "de": "Heidelbeertarte", "it": "Crostata di mirtilli", "es": "Tarta de arándanos" },
+          "description": {
+            "fr": "Pâte sablée maison, myrtilles des montagnes",
+            "en": "Homemade shortcrust pastry, mountain blueberries",
+            "de": "Hausgemachter Mürbeteig, Bergheidelbeeren",
+            "it": "Pasta frolla fatta in casa, mirtilli di montagna",
+            "es": "Masa quebrada casera, arándanos de montaña"
+          },
+          "prix": 8,
+          "allergenes": ["gluten", "oeufs", "lait"],
+          "tags": ["fait-maison", "vegetarien"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Gâteau de Savoie, crème anglaise", "en": "Savoy sponge cake, custard", "de": "Savoyer Biskuitkuchen, Vanillesauce", "it": "Torta di Savoia, crema inglese", "es": "Bizcocho de Saboya, natillas" },
+          "description": {
+            "fr": "Le biscuit léger traditionnel de la région",
+            "en": "The region’s traditional light sponge cake",
+            "de": "Der traditionelle, luftige Biskuitkuchen der Region",
+            "it": "Il tradizionale pan di Spagna leggero della regione",
+            "es": "El bizcocho ligero tradicional de la región"
+          },
+          "prix": 7,
+          "allergenes": ["gluten", "oeufs", "lait"],
+          "tags": ["fait-maison", "vegetarien"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Sorbet citron", "en": "Lemon sorbet", "de": "Zitronensorbet", "it": "Sorbetto al limone", "es": "Sorbete de limón" },
+          "description": {
+            "fr": "Deux boules, sans lactose",
+            "en": "Two scoops, dairy-free",
+            "de": "Zwei Kugeln, laktosefrei",
+            "it": "Due palline, senza lattosio",
+            "es": "Dos bolas, sin lactosa"
+          },
+          "prix": 6,
+          "allergenes": [],
+          "tags": ["vegan", "sans-gluten"],
+          "dispo": true
+        }
+      ]
+    },
+    {
+      "id": "boissons",
+      "titre": { "fr": "Boissons", "en": "Drinks", "de": "Getränke", "it": "Bevande", "es": "Bebidas" },
+      "plats": [
+        {
+          "nom": { "fr": "Vin blanc de Savoie, Apremont (12 cl)", "en": "Savoy white wine, Apremont (12 cl)", "de": "Savoyer Weißwein, Apremont (12 cl)", "it": "Vino bianco di Savoia, Apremont (12 cl)", "es": "Vino blanco de Saboya, Apremont (12 cl)" },
+          "description": {
+            "fr": "Vin blanc sec et frais, parfait avec la fondue",
+            "en": "Crisp dry white wine, perfect with fondue",
+            "de": "Frischer, trockener Weißwein, ideal zum Fondue",
+            "it": "Vino bianco secco e fresco, perfetto con la fondue",
+            "es": "Vino blanco seco y fresco, perfecto con la fondue"
+          },
+          "prix": 6,
+          "allergenes": ["sulfites"],
+          "tags": ["local"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Jus de pomme artisanal (25 cl)", "en": "Craft apple juice (25 cl)", "de": "Naturtrüber Apfelsaft (25 cl)", "it": "Succo di mela artigianale (25 cl)", "es": "Zumo de manzana artesanal (25 cl)" },
+          "description": {
+            "fr": "Pressé dans un verger de Haute-Savoie",
+            "en": "Pressed in a Haute-Savoie orchard",
+            "de": "Gepresst in einem Obstgarten in Hochsavoyen",
+            "it": "Spremuto in un frutteto dell’Alta Savoia",
+            "es": "Prensado en un huerto de Alta Saboya"
+          },
+          "prix": 4.5,
+          "allergenes": [],
+          "tags": ["local", "vegan"],
+          "dispo": true
+        },
+        {
+          "nom": { "fr": "Café", "en": "Espresso", "de": "Espresso", "it": "Caffè", "es": "Café solo" },
+          "description": { "fr": "", "en": "", "de": "", "it": "", "es": "" },
+          "prix": 2.5,
+          "allergenes": [],
+          "tags": [],
+          "dispo": true
+        }
+      ]
+    }
+  ],
+  "noteAllergenes": {
+    "fr": "Les allergènes sont déclarés par le restaurant. Des traces peuvent être présentes en cuisine : signalez toute allergie avant de commander.",
+    "en": "Allergens are declared by the restaurant. Traces may be present in the kitchen: please report any allergy before ordering.",
+    "de": "Die Allergene werden vom Restaurant angegeben. In der Küche können Spuren vorhanden sein: Bitte melden Sie Allergien vor der Bestellung.",
+    "it": "Gli allergeni sono dichiarati dal ristorante. In cucina possono essere presenti tracce: segnalate eventuali allergie prima di ordinare.",
+    "es": "Los alérgenos los declara el restaurante. Puede haber trazas en la cocina: informe de cualquier alergia antes de pedir."
+  }
+}
