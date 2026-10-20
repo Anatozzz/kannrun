@@ -6,6 +6,7 @@
   <title>Polyglotte, restaurants multilingues à Annecy</title>
   <meta name="description" content="Polyglotte s'occupe à votre place de vos avis Google, de votre menu QR en 5 langues et de vos allergènes. Un service local à Annecy, audit gratuit remis en main propre sous 48 h.">
   <meta name="theme-color" content="#0b2f45">
+  <script>document.documentElement.classList.add("js");</script>
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Polyglotte">
@@ -45,7 +46,7 @@
           <li><a href="#demo">Démo</a></li>
           <li><a href="#tarifs">Tarifs</a></li>
           <li><a href="#faq">Questions</a></li>
-          <li class="nav__cta"><a class="btn btn--accent btn--sm" href="#audit" data-cta="audit">Audit gratuit</a></li>
+          <li class="nav__cta"><a class="btn btn--accent btn--sm" href="#audit">Audit gratuit</a></li>
         </ul>
       </nav>
     </div>
@@ -60,7 +61,7 @@
           <h1 id="hero-titre" class="hero__titre">Votre restaurant parle la langue de <em>chaque client</em>.</h1>
           <p class="hero__lead">Avis Google, menu en 5 langues, allergènes&nbsp;: une personne d'Annecy, aidée par l'IA, s'en occupe <strong>à votre place</strong>. Vous gardez la main, vous validez si vous le souhaitez, et vous n'avez aucun logiciel à apprendre.</p>
           <div class="hero__actions">
-            <a class="btn btn--accent btn--lg" href="#audit" data-cta="audit">Recevoir mon audit gratuit</a>
+            <a class="btn btn--accent btn--lg" href="#audit">Recevoir mon audit gratuit</a>
             <a class="btn btn--ghost-clair btn--lg" href="menu/?r=demo">Voir un menu de démonstration</a>
           </div>
           <p class="hero__note">Audit imprimé, remis en main propre sous 48&nbsp;h. Gratuit et sans engagement.</p>
@@ -316,7 +317,7 @@
               <li>Menu traduit ou non, allergènes</li>
               <li>Imprimé et remis en main propre sous 48&nbsp;h</li>
             </ul>
-            <a class="btn btn--contour" href="#audit" data-cta="audit">Recevoir mon audit gratuit</a>
+            <a class="btn btn--contour" href="#audit">Recevoir mon audit gratuit</a>
           </article>
 
           <article class="tarif tarif--vedette" aria-labelledby="t-demarrage">
@@ -334,7 +335,7 @@
               <li>Réponse à vos 30 derniers avis, dans la langue de chaque client</li>
               <li>10 chevalets QR imprimés pour vos tables</li>
             </ul>
-            <a class="btn btn--accent" href="#audit" data-cta="audit">Commencer par l'audit</a>
+            <a class="btn btn--accent" href="#audit">Commencer par l'audit</a>
           </article>
 
           <article class="tarif" aria-labelledby="t-serenite">
@@ -350,7 +351,7 @@
               <li>4 publications Google par mois</li>
               <li>Un rapport mensuel simple</li>
             </ul>
-            <a class="btn btn--contour" href="#audit" data-cta="audit">En parler lors de l'audit</a>
+            <a class="btn btn--contour" href="#audit">En parler lors de l'audit</a>
           </article>
         </div>
       </div>
@@ -362,8 +363,8 @@
         <div class="fondateurs__carte">
           <p class="eyebrow">Offre fondateurs</p>
           <h2 id="fond-titre">Les 10 premiers restaurants d'Annecy&nbsp;: Pack Démarrage à <span class="prix-barre"><s>290&nbsp;€</s></span> 145&nbsp;€</h2>
-          <p>Polyglotte démarre à Annecy cet automne. Aux dix premiers restaurants qui nous font confiance, on offre la moitié du Pack Démarrage. En échange, on vous demande simplement vos retours francs pour améliorer le service.</p>
-          <a class="btn btn--accent" href="#audit" data-cta="audit">Recevoir mon audit gratuit</a>
+          <p>Polyglotte démarre à Annecy cet automne. Pour les dix premiers restaurants qui nous rejoignent, le Pack Démarrage est à moitié prix&nbsp;: même contenu, 145&nbsp;€ au lieu de 290&nbsp;€.</p>
+          <a class="btn btn--accent" href="#audit">Recevoir mon audit gratuit</a>
         </div>
         <div class="fondateurs__saison">
           <h3>Pourquoi maintenant&nbsp;?</h3>
@@ -396,7 +397,7 @@
           </li>
           <li class="charte__item">
             <h3>Un accès que vous contrôlez</h3>
-            <p>Vous nous ajoutez comme «&nbsp;gestionnaire&nbsp;» de votre fiche Google. Vous restez propriétaire et pouvez retirer cet accès à tout moment, en deux clics.</p>
+            <p>Vous nous ajoutez comme «&nbsp;gestionnaire&nbsp;» de votre fiche Google. Vous restez propriétaire et pouvez retirer cet accès à tout moment.</p>
           </li>
           <li class="charte__item">
             <h3>Aucune donnée revendue</h3>
@@ -538,7 +539,7 @@
             <div class="form__msg" id="form-msg" role="status" aria-live="polite" tabindex="-1" hidden></div>
           </form>
           <noscript>
-            <p class="form__noscript">Ce formulaire a besoin de JavaScript. Vous pouvez aussi nous contacter via les coordonnées indiquées dans les <a href="mentions-legales.html">mentions légales</a>.</p>
+            <p class="form__noscript">Ce formulaire a besoin de JavaScript pour fonctionner. Activez-le dans votre navigateur, ou rechargez la page.</p>
           </noscript>
         </div>
       </div>
@@ -554,7 +555,7 @@
       <ul class="site-footer__liens">
         <li data-config-if="email"><a data-config="email" data-config-show href="#audit">E-mail</a></li>
         <li data-config-if="telephone"><a data-config="telephone" data-config-show href="#audit">Téléphone</a></li>
-        <li><a href="#audit" data-cta="audit">Audit gratuit</a></li>
+        <li><a href="#audit">Audit gratuit</a></li>
         <li><a href="mentions-legales.html">Mentions légales et confidentialité</a></li>
       </ul>
       <p class="site-footer__legal">© <span data-annee>2026</span> Polyglotte. TVA non applicable, art. 293&nbsp;B du CGI.</p>
